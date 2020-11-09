@@ -8,12 +8,12 @@
             <h1 class="title_text">EcoBook</h1>
           </div>
           <ul>
-            <li><a href="homepage.html">
+            <li><router-link to='/'>
               <i class="fas fa-home"></i>
-              </a></li>
-            <li><a href="#">
+              </router-link></li>
+            <li><router-link to='/profile'>
               <i class="fas fa-user"></i>
-              </a></li>
+              </router-link></li>
           </ul>
         </div>
     </div>

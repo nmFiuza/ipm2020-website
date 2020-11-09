@@ -3,7 +3,7 @@
     <div class="wrapper collapse">
       <Header/>
       <Sidebar/>
-      <Home/>
+      <router-view/>
     </div>
   </body>
 </template>
@@ -11,18 +11,15 @@
 <script>
   import Sidebar from './Sidebar.vue'
   import Header from './Header.vue'
-  import Home from './pages/Home.vue'
-
 
   export default {
     name: 'BasePage',
     props: {
-      msg: String
+
     },
     components: {
       Sidebar,
-      Header,
-      Home
+      Header
     }
   }
 </script>

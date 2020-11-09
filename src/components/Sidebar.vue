@@ -1,42 +1,50 @@
 <template>
     <div class="sidebar" id="navbar">
         <ul>
-          <li><a href="homepage.html" class="active">
-            <span class="icon"><i class="fas fa-home"></i></span>
-            <span class="title">Inicio</span>
-            </a>
+          <li>
+            <router-link to='/' class="active">
+              <span class="icon"><i class="fas fa-home"></i></span>
+              <span class="title">Inicio</span>
+            </router-link >
           </li>
           <li class="sublist"><a href="#" >
             <span class="icon"><i class="fas fa-user"></i></span>
             <span class="title">Perfil</span>
             </a>
             <div class="subnav">
-              <a href="assets/html/profile.html">Ver Perfil</a>
-              <a href="assets/html/wishlist.html">Ver Wishlist</a>
-              <a href="assets/html/listings.html">Ver Minha Listagem</a>
+              <router-link to='/profile'>Ver Perfil</router-link >
+              <router-link to='/profile'>Ver Wishlist</router-link >
+              <router-link to='/profile'>Ver Minha Listagem</router-link >
             </div>
           </li>
-          <li><a href="catalog.html">
-            <span class="icon"><i class="fas fa-book"></i></span>
-            <span class="title">Catálogos</span>
-            </a></li>
-          <li class="sublist"><a href="#">
-            <span class="icon"><i class="fas fa-leaf"></i></span>
-            <span class="title">Eco-Repositório</span>
-            </a>
+          <li>
+            <router-link to='/catalog'>
+              <span class="icon"><i class="fas fa-book"></i></span>
+              <span class="title">Catálogos</span>
+            </router-link >
+          </li>
+          <li class="sublist">
+            <router-link to='/eco-repository'>
+              <span class="icon"><i class="fas fa-leaf"></i></span>
+              <span class="title">Eco-Repositório</span>
+            </router-link>
             <div class="subnav">
-              <a href="assets/html/donate.html">Doar Livro</a>
-              <a href="assets/html/mistery.html">Caixa Mistério</a>
+               <router-link to='/eco-repository'>Doar Livro</router-link>
+               <router-link to='/eco-repository'>Caixa Mistério</router-link>
             </div>
           </li>
-          <li><a href="reviews.html">
-            <span class="icon"><i class="fas fa-quote-left"></i></span>
-            <span class="title">Reviews</span>
-            </a></li>
-          <li><a href="settings.html">
-            <span class="icon"><i class="fas fa-cog"></i></span>
-            <span class="title">Definições</span>
-            </a></li>
+          <li>
+            <router-link to='/reviews'>
+              <span class="icon"><i class="fas fa-quote-left"></i></span>
+              <span class="title">Reviews</span>
+            </router-link>
+          </li>
+          <li>
+             <router-link to='/settings'>
+              <span class="icon"><i class="fas fa-cog"></i></span>
+              <span class="title">Definições</span>
+             </router-link>
+          </li>
         </ul>
       </div>
 </template>
