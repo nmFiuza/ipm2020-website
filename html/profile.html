@@ -2,95 +2,543 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - EcoBook</title>
-    
-    <link rel="stylesheet" href="../css/navbar.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Home - EcoBook</title>
+
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/profile.css">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-2.min.css">
+  <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="wrapper collapse">
-        <div class="top_navbar">
-          <div class="top_menu">
-            <div class="logo">
-              <img src="../img/logo.png" class="logo">
-            </div>
-            <ul>
-              <li><a href="#">
-                <i class="fas fa-search"></i>
-                </a></li>
-              <li><a href="#">
-                <i class="fas fa-bell"></i>
-                </a></li>
-              <li><a href="#">
-                <i class="fas fa-user"></i>
-                </a></li>
-            </ul>
+  <div class="wrapper collapser">
+    <div class="top_navbar">
+      <div class="top_menu">
+        <div class="page_title">
+          <div class="logo">
+            <img src="../assets/img/logo.png" class="logo">
           </div>
+          <h1 class="title_text">EcoBook</h1>
         </div>
-        <!-- Adicionar as tags no href das restantes páginas -->
-        <div class="sidebar" id="navbar">
-            <ul>
-              <li><a href="../../homepage.html">
-                <span class="icon"><i class="fas fa-book"></i></span>
-                <span class="title">Inicio</span>
-                </a>
-              </li>
-              <li class="sublist"><a href="#" class="active">
-                <span class="icon"><i class="fas fa-book"></i></span>
-                <span class="title">Perfil</span>
-                </a>
-                <div class="subnav">
+        <ul>
+          <li><a href="../index.html">
+              <i class="fas fa-home"></i>
+            </a></li>
+          <li><a href="#">
+              <i class="fas fa-user"></i>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Adicionar as tags no href das restantes páginas -->
+    <div class="sidebar" id="navbar">
+      <ul>
+          <li>
+              <a href="../index.html">
+                  <span class="icon"><i class="fas fa-home"></i></span>
+                  <span style="font-size: 15px;" class="title">Inicio</span>
+              </a>
+          </li>
+          <li class="sublist">
+              <a href="#" class="active">
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span style="font-size: 15px;" class="title">Perfil</span>
+              </a>
+              <div class="subnav">
                   <a href="profile.html">Ver Perfil</a>
                   <a href="wishlist.html">Ver Wishlist</a>
                   <a href="listings.html">Ver Minha Listagem</a>
-                </div>
-              </li>
-              <li><a href="catalog.html">
-                <span class="icon"><i class="fas fa-file-video"></i></span>
-                <span class="title">Catálogos</span>
-                </a></li>
-              <li class="sublist"><a href="#">
-                <span class="icon"><i class="fas fa-volleyball-ball"></i></span>
-                <span class="title">Eco-Repositório</span>
-                </a>
-                <div class="subnav">
+              </div>
+          </li>
+          <li><a href="catalog.html">
+                  <span class="icon"><i class="fas fa-book"></i></span>
+                  <span style="font-size: 15px;" class="title">Catálogo de Trocas</span>
+              </a></li>
+          <li class="sublist"><a href="#">
+                  <span class="icon"><i class="fas fa-leaf"></i></span>
+                  <span style="font-size: 15px;" class="title">Eco-Repositório</span>
+              </a>
+              <div class="subnav">
                   <a href="donate.html">Doar Livro</a>
                   <a href="mistery.html">Caixa Mistério</a>
-                </div>
-              </li>
-              <li><a href="reviews.html">
-                <span class="icon"><i class="fas fa-blog"></i></span>
-                <span class="title">Reviews</span>
-                </a></li>
-              <li><a href="settings.html">
-                <span class="icon"><i class="fas fa-leaf"></i></span>
-                <span class="title">Definições</span>
-                </a></li>
-          </ul>
+              </div>
+          </li>
+          <li><a href="settings.html">
+                  <span class="icon"><i class="fas fa-cog"></i></span>
+                  <span style="font-size: 15px;" class="title">Definições</span>
+              </a></li>
+      </ul>
+    </div>
+    
+    <div class="main_container">
+      <div class="container-fluid profile">
+        <div class="row">
+          <div class="col-sm-4" style="padding-left:100px">
+            <img class="img-fluid d-block mx-auto mb-5" src="../assets/img/profile.png">
+            
+          </div>
+          <div class="col-sm-8">
+            <div class="user-info">
+              <span class="user-info-label">NOME:     </span>
+              <span class="user-info-text">Josefina Miguel Silva</span>
+            </div><div class="user-info">
+              <span class="user-info-label">EMAIL:     </span>
+              <span class="user-info-text">jos.silva@gmail.com</span>
+            </div><div class="user-info">
+              <span class="user-info-label">MORADA:     </span>
+              <span class="user-info-text">Rua dos Livros, nº 5, 2º Dto</span>
+            </div>                
+          </div>
         </div>
-        
-        <div class="main_container">
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+        <div class="row">
+          <div class="col-sm-4" style="padding-left:100px">
+            <div class="points-box">
+              <span class="points-number">300</span>
+              <span class="points-text">Pontos</span>
+            </div>
           </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+          <div class="col-sm-8">
+            <div class="edit-details-btn">
+              Editar Detalhes
+            </div>
           </div>
         </div>
       </div>
 
-    <!-- Scripts used -->
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/fontawsome.js"></script>
-    <script src="../js/navbar.js"></script>
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <h2 class="text-uppercase text-center text-secondary">Lista de Partilha</h2>
+          <hr class="star-dark mb-5 star-center-lg">
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-1">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/cabin.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-2">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/cake.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-3">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/circus.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-4">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/game.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-5">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/safe.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-6">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/submarine.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/cabin.png">
+                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/cake.png">
+                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/circus.png">
+                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/game.png">
+                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/safe.png">
+                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/submarine.png">
+                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <h2 class="text-uppercase text-center text-secondary">Lista de Desejos</h2>
+          <hr class="star-dark mb-5 star-center-lg">
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-7">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/cabin.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-8">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/cake.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-9">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/circus.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-10">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/game.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-11">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/safe.png">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#portfolio-modal-12">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                  <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i
+                      class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="../assets/img/portfolio/submarine.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-7">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/cabin.png">
+                    <p class="mb-5">NOVO 7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-8">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/cake.png">
+                    <p class="mb-5">NOVO 8 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-9">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/circus.png">
+                    <p class="mb-5">NOVO 9 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-10">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/game.png">
+                    <p class="mb-5">NOVO 10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-11">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/safe.png">
+                    <p class="mb-5">NOVO 11 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-12">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                    <hr class="star-dark mb-5 star-center"><img class="img-fluid mb-5" src="../assets/img/portfolio/submarine.png">
+                    <p class="mb-5">NOVO 12 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                      neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore
+                      quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                      itaque. Nam.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <h2 class="text-uppercase text-center text-secondary">Mensagens</h2>
+          <hr class="star-dark mb-5 star-center">
+          <div class="row message">
+              <div class="col-sm-1 message-img-wrapper">
+                <img src="../assets/img/placeholder-user.png" class="message-img">
+              </div>
+              <div>
+                <div class="message-name">António Felgueiras</div>
+                <div class="message-text">Proponho uma troca de livros</div>
+              </div>
+          </div>
+          <div class="row message">
+            <div class="col-sm-1 message-img-wrapper">
+              <img src="../assets/img/placeholder-user.png" class="message-img">
+            </div>
+            <div>
+              <div class="message-name">Cristina Oliveira</div>
+              <div class="message-text">Proponho uma troca de livros</div>
+            </div>
+          </div>
+          <div class="row message">
+            <div class="col-sm-1 message-img-wrapper">
+              <img src="../assets/img/placeholder-user.png" class="message-img">
+            </div>
+            <div>
+              <div class="message-name">Mário Machado</div>
+              <div class="message-text">Proponho uma troca de livros</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scripts used -->
+  <script src="../assets/js/jquery-3.5.1.min.js"></script>
+  <script src="../assets/js/fontawsome.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 
 
 </body>
