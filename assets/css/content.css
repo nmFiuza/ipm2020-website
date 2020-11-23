@@ -1,0 +1,75 @@
+body{
+    background: none!important;
+}
+
+html{
+    background-image: url("../img/shelf.jfif");
+}
+
+.eco-rep-back {
+    padding-top: 15rem;
+    padding-bottom: 5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.eco-rep-back .eco-rep-back-inner {
+    position: relative;
+    padding: 3rem;
+    margin: .5rem;
+    background-color: lightgrey;
+    opacity: 0.98;
+}
+
+.eco-rep-content {
+    display: inline-block;
+}
+
+.eco-rep-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 300px;
+    margin: 100px;
+}
+
+.donate-list-container{
+    margin: auto;
+    width: 75%;
+    border: 3px solid #134e13;
+    padding: 10px;
+}
+
+.li-element{
+    padding: 2%;
+}
+
+.donate-element{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(19, 78, 19, 0.1);
+}
+
+.donate-li-checkbox{
+    margin: 3%!important;
+}
+
+.donate-li-img{
+    width: 15%;
+    height: auto;
+}
+
+.donate-li-text{
+    padding-left: 10%;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
