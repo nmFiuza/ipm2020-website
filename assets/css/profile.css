@@ -49,6 +49,11 @@
     text-align: center;
 }
 
+.edit-details-btn:hover { 
+    transform: scale(1.1);
+    background-color: #d3d3d3;
+}
+
 .points-text {
     font-size: 1.25rem;
     font-weight: 550;
@@ -131,6 +136,11 @@
     border-width: 2px;
     border-radius: 50rem!important;
     cursor: pointer;
+}
+
+.add-btn:hover{
+    transform: scale(1.1);
+    background-color: #16a084;
 }
 
 .add-btn-sign {
