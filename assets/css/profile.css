@@ -111,6 +111,10 @@
     cursor: pointer;
 }
 
+.message:hover {
+    background-color: #16a084;
+}
+
 .message-img {
     height: 60px;
     border-radius: 20rem;
