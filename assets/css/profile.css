@@ -111,6 +111,10 @@
     cursor: pointer;
 }
 
+.message:hover {
+    background-color: #16a084;
+}
+
 .message-img {
     height: 60px;
     border-radius: 20rem;
@@ -151,4 +155,59 @@
     margin-left: 10px;
     text-align: center;
     vertical-align: baseline;
+}
+
+.book{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #18bc9c; 
+    border-radius: 2rem!important; 
+    color: #ffffff;
+}
+
+.book-info {
+    padding-left: 10%;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-2{
+    background-color: #18bc9c;
+    border-width: 2px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    border-radius: 2rem!important;
+    padding: .5rem 1rem;
+    width: 80%;
+    height: 190px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #ffffff;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.book-img {
+    width: 8%;
+    vertical-align: middle;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.book-name {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.book-text {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.book:hover {
+    background-color: #16a084;
 }
