@@ -1,10 +1,10 @@
 var users = '{ "users" : [' +
     '{"id" : 1, "firstname" : "Hugo", "surname" : "Santiago", "points" : 100, "wishlist" : [512278208, 681860960], "available" : [123456789, 987654321, 200738799]},' +
-    '{"id" : 2, "firstname" : "Nuno", "surname" : "Santos", "points" : 0, "wishlist" : [987654321, 512278208], "available" : [709026838]},' +
-    '{"id" : 3, "firstname" : "João", "surname" : "Paulo", "points" : 0, "wishlist" : [987654321, 709026838], "available" : [123456789]},' +
-    '{"id" : 4, "firstname" : "Pedro", "surname" : "Belinha", "points" : 0, "wishlist" : [286061548, 512278208], "available" : [200738799, 512278208]},' +
-    '{"id" : 5, "firstname" : "Ana", "surname" : "Catarina", "points" : 0, "wishlist" : [200738799, 286061548], "available" : [709026838]},' +
-    '{"id" : 6, "firstname" : "John", "surname" : "Hubbard", "points" : 0, "wishlist" : [709026838], "available" : [591171946, 512278208]}' +
+    '{"id" : 2, "firstname" : "Nuno", "surname" : "Santos", "points" : 100, "wishlist" : [987654321, 512278208], "available" : [709026838]},' +
+    '{"id" : 3, "firstname" : "João", "surname" : "Paulo", "points" : 100, "wishlist" : [987654321, 709026838], "available" : [123456789]},' +
+    '{"id" : 4, "firstname" : "Pedro", "surname" : "Belinha", "points" : 100, "wishlist" : [286061548, 512278208], "available" : [200738799, 512278208]},' +
+    '{"id" : 5, "firstname" : "Ana", "surname" : "Catarina", "points" : 100, "wishlist" : [200738799, 286061548], "available" : [709026838]},' +
+    '{"id" : 6, "firstname" : "John", "surname" : "Hubbard", "points" : 100, "wishlist" : [709026838], "available" : [591171946, 512278208]}' +
 ']}';
 
 var books = '{ "books" : [' +
