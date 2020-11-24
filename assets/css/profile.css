@@ -158,6 +158,22 @@
 }
 
 .book{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #18bc9c; 
+    border-radius: 2rem!important; 
+    color: #ffffff;
+}
+
+.book-info {
+    padding-left: 10%;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-2{
     background-color: #18bc9c;
     border-width: 2px;
     margin-left: auto!important;
@@ -175,14 +191,21 @@
 }
 
 .book-img {
-    width: 100px;
-    margin-top: 10px;
+    width: 8%;
+    vertical-align: middle;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .book-name {
-    font-weight: 600;
-    font-size: 20px;
-    padding-top: 10px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.book-text {
+    font-weight: 500;
+    font-size: 1rem;
 }
 
 .book:hover {
