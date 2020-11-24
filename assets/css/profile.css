@@ -164,6 +164,8 @@
     background-color: #18bc9c; 
     border-radius: 2rem!important; 
     color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 30px;
 }
 
 .book-info {
@@ -171,23 +173,6 @@
     text-align: left;
     align-items: center;
     justify-content: center;
-}
-
-.book-2{
-    background-color: #18bc9c;
-    border-width: 2px;
-    margin-left: auto!important;
-    margin-right: auto!important;
-    border-radius: 2rem!important;
-    padding: .5rem 1rem;
-    width: 80%;
-    height: 190px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: left;
-    color: #ffffff;
-    padding-left: 30px;
-    cursor: pointer;
 }
 
 .book-img {
@@ -210,4 +195,15 @@
 
 .book:hover {
     background-color: #16a084;
+}
+
+.trash-book{
+    margin-left: 20%;
+    margin-right: 5%;
+    color: #5e5e5e;
+    width: 1%;
+}
+
+.trash-book:hover{
+    color: #ffffff;
 }
