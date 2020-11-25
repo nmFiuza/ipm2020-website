@@ -28,7 +28,6 @@ function displayNextImage() {
         return;
     }
     randomizedBook = books[counter%(books.length)].isbn
-    console.log(randomizedBook);
     randimg.src = "../img/books/" + randomizedBook  +".jpg";
 }
 var imgRandTime = setInterval(displayNextImage, 30);

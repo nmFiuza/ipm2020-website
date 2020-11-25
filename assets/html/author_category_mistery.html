@@ -90,19 +90,26 @@
                     </div>
                     <div style="display: flex; justify-content: center; align-items: center;">
                         <div class="switch" id="switch">
-                            <div class="switch-author active-param" id="switch_author" onclick="changeForm(this)">
+                            <div class="switch-author active-param" id="switch_author" onclick="changeFormAuthor(this)">
                             Autor
                             </div>
-                            <div class="switch-category" id="switch_category" onclick="changeForm(this)">
+                            <div class="switch-category" id="switch_category" onclick="changeFormCategory(this)">
                             Categoria
                             </div>
                         </div>
                     </div>
-                    <div id="form_author">
-                        
-                    </div>
-                    <div id="form_category">
-                        
+                    <div class="form-container">
+                        <div id="form_author" class="active-form">
+                            <select id="author_dropdown" class="author_dropdown" onchange="authorSelected()">
+                                <option value="default">--selecione o autor que deseja--</option>
+                            </select>
+                        </div>
+                        <div id="form_category" class="hidden">
+                            <select id="category_dropdown" class="category_dropdown" onchange="categorySelected()">
+                                <option value="default">--selecione a categoria que deseja--</option>
+                            </select>
+                        </div>
+                        <button id="confirm" class="eco-rep-button" disabled>Confirmar</button>
                     </div>
                 </div>
             </div>

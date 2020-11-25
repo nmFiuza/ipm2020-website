@@ -6,6 +6,10 @@ var points = document.getElementById("ecoPoints");
 points.innerHTML = logged.points;
 var userBooks = getUserBooks(logged.id);
 
+var donateButton = document.getElementById("donate_button");
+if(userBooks[1].length <=0){
+    donateButton.disabled = true;
+}
 
 //Fill the donatable list with user available books
 var donatable = document.getElementById("donatable_list");
@@ -47,7 +51,6 @@ for(var book of userBooks[1]){
     donatable.appendChild(li);
 }
 
-var donateButton = document.getElementById("donate_button");
 donateButton.addEventListener("click", function(){
     var list = document.getElementById("donatable_list");
     if(list.children.length == 0){
