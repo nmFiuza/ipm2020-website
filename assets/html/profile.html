@@ -114,7 +114,7 @@
                 <h2 class="text-uppercase text-center text-secondary">Lista de Partilha</h2>
                 <hr class="star-dark mb-5 text-center star-center-lg">
             </div>
-            <div class="add-btn">
+            <div id="share-btn" class="add-btn">
               <div class="add-btn-sign">+ Adicionar Livro</div>
             </div>
           </div>
@@ -138,7 +138,7 @@
                 <h2 class="text-uppercase text-center text-secondary">Lista de Desejos</h2>
                 <hr class="star-dark mb-5 text-center star-center-lg">
             </div>
-            <div class="add-btn" >
+            <div id="wish-btn" class="add-btn" >
               <div class="add-btn-sign">+ Adicionar Livro</div>
             </div>
           </div>
@@ -189,6 +189,96 @@
           </div>
         </div>
       </section>
+    </div>
+  </div>
+
+  <div id="share-modal" class="modal-profile">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button id="share-close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container text-center">
+                <div class="col-lg-12 mx-auto">
+                  <h2 class="text-uppercase text-secondary mb-0">Adicionar livro para partilha</h2>
+                  <hr class="star-dark mb-5 star-center-lg">
+                  <div class="col-lg-10 mx-auto">
+                    <div class="model-info">
+                      <span class="model-label" style="margin-right: 33px;">ISBN:</span>
+                      <input id="share-isbn" type="text" class="model-input" placeholder="Insira o nº isbn"></input>
+                    </div><div class="model-info">
+                      <span class="model-label" style="margin-right: 5px;">TÍTULO:</span>
+                      <input id="share-title" type="text" class="model-input" placeholder="Insira o título"></input>
+                    </div><div class="model-info">
+                      <span class="model-label" style="margin-right: 5px;">AUTOR:</span>
+                      <input id="share-author" type="text" class="model-input" placeholder="Insira o nome do autor"></input>
+                    </div>
+                    <div class="model-info">
+                      <span class="model-label" style="margin-right: 34px;">ANO:</span>
+                      <input id="share-year" type="text" class="model-input" placeholder="Insira o ano de lançamento"></input>
+                    </div> 
+                    <div class="model-info">
+                      <span class="model-label" style="margin-right: 5px;">GÉNERO:</span>
+                      <select id="share-genres" class="model-select">
+                        <option value="">--selecione o género do livro--</option>
+                      </select>
+                    </div>                 
+                  </div>
+                  <div id="share-btn-add" class="add-btn-modal" >
+                    <div class="add-btn-sign">+ Adicionar Livro</div>
+                  </div>   
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="wish-modal" class="modal-profile">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button id="wish-close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container text-center">
+                <div class="col-lg-12 mx-auto">
+                  <h2 class="text-uppercase text-secondary mb-0">Adicionar livro que deseja</h2>
+                  <hr class="star-dark mb-5 star-center-lg">
+                  <div class="col-lg-10 mx-auto">
+                    <div class="model-info">
+                      <span class="model-label" style="margin-right: 33px;">ISBN:</span>
+                      <input id="wish-isbn" type="text" class="model-input" placeholder="Insira o nº isbn"></input>
+                    </div><div class="model-info">
+                      <span class="model-label" style="margin-right: 5px;">TÍTULO:</span>
+                      <input id="wish-title" type="text" class="model-input" placeholder="Insira o título"></input>
+                    </div><div class="model-info">
+                      <span class="model-label" style="margin-right: 5px;">AUTOR:</span>
+                      <input id="wish-author" type="text" class="model-input" placeholder="Insira o nome do autor"></input>
+                    </div>
+                    <div class="model-info">
+                      <span class="model-label" style="margin-right: 34px;">ANO:</span>
+                      <input id="wish-year" type="text" class="model-input" placeholder="Insira o ano de lançamento"></input>
+                    </div>
+                    <div class="model-info">
+                      <span class="model-label" style="margin-right: 5px;">GÉNERO:</span>
+                      <select id="wish-genres" class="model-select">
+                        <option value="">--selecione o género do livro--</option>
+                      </select>
+                    </div>                   
+                  </div>
+                  <div id="wish-btn-add" class="add-btn-modal" >
+                    <div class="add-btn-sign">+ Adicionar Livro</div>
+                  </div>   
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 

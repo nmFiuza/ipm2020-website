@@ -8,19 +8,63 @@ var users = '{ "users" : [' +
 ']}';
 
 var books = '{ "books" : [' +
-    '{"name" : "Harry Potter and the Philosopher\'s Stone", "author" : "J. K. Rowling", "year" : 1997, "genre" : ["fantasy"], "isbn" : 123456789},' +
-    '{"name" : "Rosas do Atacama", "author" : "Luís Sepúlveda", "year" : 2000, "genre" : ["romance"], "isbn" : 987654321},' +
-    '{"name" : "Tess dos D\'Ubervilles", "author" : "Thomas Hardy", "year" : 1891, "genre" : ["romance"], "isbn" : 512278208},' +
-    '{"name" : "The Girl With The Dragon Tattoo", "author" : "Stieg Larsson", "year" : 2005, "genre" : ["Mystery, Crime Fiction, Suspense, Thriller, Crime novel, Nordic noir"], "isbn" : 591171946},' +
-    '{"name" : "Percy Jackson & the Olympians: The Lightning Thief", "author" : "Rick Riordan", "year" : 2005, "genre" : ["Greek mythology, Novel, Young adult fiction, Fantasy Fiction, High fantasy"], "isbn" : 709026838},' +
-    '{"name" : "The Design of Everyday Things", "author" : "Don Norman", "year" : 1988, "genre" : ["Dissertation"], "isbn" : 309998648},' +
-    '{"name" : "Moby Dick", "author" : "Herman Melville", "year" : 1851, "genre" : ["Novel, Comics, Allegory, Graphic novel, Epic, Adventure fiction, Nautical fiction"], "isbn" : 200738799},' +
-    '{"name" : "The Old Man and the Sea", "author" : "Ernest Hemingway", "year" : 1952, "genre" : ["Novel, Allegory, Bildungsroman, Nautical fiction"], "isbn" : 681860960},' +
-    '{"name" : "Brave New World", "author" : "Aldous Huxley", "year" : 1932, "genre" : ["Novel, Science Fiction, Dystopian Fiction"], "isbn" : 286061548}' +
+    '{"name" : "Harry Potter and the Philosopher\'s Stone", "author" : "J. K. Rowling", "year" : 1997, "genre" : ["Fantasia"], "isbn" : 123456789},' +
+    '{"name" : "Rosas do Atacama", "author" : "Luís Sepúlveda", "year" : 2000, "genre" : ["Romance"], "isbn" : 987654321},' +
+    '{"name" : "Tess dos D\'Ubervilles", "author" : "Thomas Hardy", "year" : 1891, "genre" : ["Romance"], "isbn" : 512278208},' +
+    '{"name" : "The Girl With The Dragon Tattoo", "author" : "Stieg Larsson", "year" : 2005, "genre" : ["Mistério, Crime, Suspense, Thriller, Romance"], "isbn" : 591171946},' +
+    '{"name" : "Percy Jackson & the Olympians: The Lightning Thief", "author" : "Rick Riordan", "year" : 2005, "genre" : ["Mitologia Grega, Romance, Ficção Jovem, Fantasia"], "isbn" : 709026838},' +
+    '{"name" : "The Design of Everyday Things", "author" : "Don Norman", "year" : 1988, "genre" : ["Dissertação"], "isbn" : 309998648},' +
+    '{"name" : "Moby Dick", "author" : "Herman Melville", "year" : 1851, "genre" : ["Romance, Banda Desenhada, Alegoria, Épico, Aventura, Ficção Náutica"], "isbn" : 200738799},' +
+    '{"name" : "The Old Man and the Sea", "author" : "Ernest Hemingway", "year" : 1952, "genre" : ["Romance, Alegoria, Ficção Náutica"], "isbn" : 681860960},' +
+    '{"name" : "Brave New World", "author" : "Aldous Huxley", "year" : 1932, "genre" : ["Romance, Ficção Científica, Ficção Distópica"], "isbn" : 286061548}' +
 ']}';
+
+var authors = '{"authors" : [' +
+    '"J. K. Rowling",' +
+    '"Luís Sepúlveda",' +
+    '"Thomas Hardy",' +
+    '"Stieg Larsson",' +
+    '"Rick Riordan",' +
+    '"Don Norman",' +
+    '"Herman Melville",' +
+    '"Ernest Hemingway",' +
+    '"Aldous Huxley"' +
+']}';
+
+var genres = '{ "genres" : [' +
+    '"Alegoria",' +
+    '"Aventura",' +
+    '"Ação",' +
+    '"Banda Desenhada",' +
+    '"Biografia",' +
+    '"Clássico",' +
+    '"Crime",' +
+    '"Dissertação",' +
+    '"Drama",' +
+    '"Épico",' +
+    '"Fantasia",' +
+    '"Ficção Distópica",' +
+    '"Ficção Jovem",' +
+    '"Ficção Náutica",' +
+    '"Ficção",' +
+    '"Literatura Infantil",' +
+    '"Mistério",' +
+    '"Mitologia Grega",' +
+    '"Não Ficção",' +
+    '"Poesia",' +
+    '"Policial",' +
+    '"Romance Histórico",' +
+    '"Romance",' +
+    '"Saúde e Bem-Estar",' +
+    '"Suspense",' +
+    '"Teatro",' +
+    '"Thriller"' +
+'] }'
 
 //local storage only accepts string variables
 loadToStorage(booksConst, JSON.parse(books));
 loadToStorage(usersConst, JSON.parse(users));
+loadToStorage(authorsConst, JSON.parse(authors));
+loadToStorage(genresConst, JSON.parse(genres));
 localStorage.setItem(loggedConst, getFromStorage(usersConst).users[0].id);
 

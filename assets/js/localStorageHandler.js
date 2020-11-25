@@ -1,6 +1,8 @@
 
 const usersConst = "users";
 const booksConst = "books";
+const authorsConst = "authors";
+const genresConst = "genres";
 const loggedConst = "logged";
 const donationWorth = 100;
 

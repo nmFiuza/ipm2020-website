@@ -123,11 +123,68 @@ for(var book of userBooks[0]){
     wishlist.appendChild(li);
 }
 
-{/* <li class="book">
-    <img src="../img/books/123456789.jpg" class="book-img">
-    <div class="book-info">
-        <div class="book-name">Harry Potter and the Philosopher's Stone</div>
-        <div class="book-text">J. K. Rowling, 1997</div>
-    </div>
-    <i class="fas fa-trash trash-book"></i>
-</li> */}
+var shareModal = document.getElementById("share-modal");
+var shareBtn = document.getElementById("share-btn");
+var shareClose = document.getElementById("share-close");
+
+var wishModal = document.getElementById("wish-modal");
+var wishBtn = document.getElementById("wish-btn");
+var wishClose = document.getElementById("wish-close");
+
+shareBtn.onclick = function() {
+    shareModal.style.display = "block";
+}
+
+shareClose.onclick = function() {
+    shareModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == shareModal) {
+        shareModal.style.display = "none";
+    }
+}
+
+wishBtn.onclick = function() {
+    wishModal.style.display = "block";
+}
+
+wishClose.onclick = function() {
+    wishModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == wishModal) {
+        wishModal.style.display = "none";
+    }
+}
+
+var shareBtnAdd = document.getElementById("share-btn-add");
+var wishBtnAdd = document.getElementById("wish-btn-add");
+
+shareBtnAdd.onclick = function(){
+    var isbn = document.getElementById("share-isbn");
+    var title = document.getElementById("share-title");
+    var author = document.getElementById("share-author");
+    var year = document.getElementById("share-year");
+
+    var usersJSON = getFromStorage(usersConst);  
+    for(var user of usersJSON.users) {
+        if(user.id == logged.id) {
+        }
+    }
+}
+
+var shareGenres = document.getElementById("share-genres");
+var wishGenres = document.getElementById("wish-genres");
+var genres = getFromStorage(genresConst).genres;
+for(var genre of genres){
+    var option = document.createElement("option");
+    var option2 = document.createElement("option");
+    option.innerHTML = genre;
+    option2.innerHTML = genre;
+    option.setAttribute("value", genre);
+    option2.setAttribute("value", genre);
+    shareGenres.appendChild(option);
+    wishGenres.appendChild(option2);
+}
