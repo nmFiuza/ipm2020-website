@@ -73,38 +73,21 @@
         <div class="eco-rep-back">
             <div class="col-xl-9 mx-auto">
                 <div class="eco-rep-back-inner text-center">
+                    <a style="text-decoration:none; color:inherit;" href="mistery.html">
+                        <div class="back-button">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </a>
                     <h1 class="section-heading mb-4"><span class="section-heading">Eco-Repositório</span></h1>
                     <div style="margin: 10px;">
                         <h4 style="word-spacing: 20px;">Tem <b style="font-size: 30px;" id="ecoPoints"></b> Pontos</h4>
                     </div>
-                    <h5>Selecione o tipo de Caixa Mistério:</h5>
-                    <div class="eco-rep-content" style="padding-top: 20px;">
-                        <div class="row">
-                            <div class="col-4">
-                                <div>
-                                    <img src="../img/mystery.png" class="mystery-img" onclick="cheapOption()">
-                                    <br></br>
-                                    <p>200 pontos</p>
-                                    <p class="lead mb-0">Livro aleatório</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div>
-                                    <img src="../img/mystery.png" class="mystery-img" onclick="midOption()">
-                                    <br></br>
-                                    <p>300 pontos</p>
-                                    <p class="lead mb-0">Possibilidade de escolher o autor ou o género do livro</p>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div>
-                                    <img src="../img/mystery.png" class="mystery-img" onclick="expensiveOption()">
-                                    <br></br>
-                                    <p>400 pontos</p>
-                                    <p class="lead mb-0">Possibilidade de escolher o livro específico que deseja!</p>
-                                </div>
-                            </div>
-                        </div>
+                    <h5>Selecionou uma Caixa Mistério aleatória!</h5>
+                    <div class="random-img-container">
+                        <img id="randimg" class="random-img" src="../img/books/123456789.jpg">
+                    </div>
+                    <div>
+                        <button id="confirm_mystery" style="display: none;" class="eco-rep-button" style="margin:20px" onclick="confirmOrder()">Confirmar</button>
                     </div>
                 </div>
             </div>
@@ -114,8 +97,7 @@
         <script src="../js/fontawsome.js"></script>
         <script src="../js/navbar.js"></script>
         <script src="../js/localStorageHandler.js"></script>
-        <script src="../js/mistery.js"></script>
-
+        <script src="../js/random_mistery.js"></script>
 </body>
 
 </html>
