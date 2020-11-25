@@ -180,8 +180,9 @@ body {
 
 
 #header_username {
-  color: #18bc9c;
+  color: #134e13;
   margin-top: 4px;
+  font-weight: 600;
 }
 
 #header_divider {
