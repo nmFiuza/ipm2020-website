@@ -1,4 +1,6 @@
 
+const selectedLiClass = " donate-element-selected";
+
 var logged = getLogged();
 var points = document.getElementById("ecoPoints");
 points.innerHTML = logged.points;
@@ -16,11 +18,14 @@ for(var book of userBooks[1]){
     //Containing div
     var div = document.createElement("div");
     div.setAttribute("class", "donate-element");
-    //Checkbox
-    var checkbox = document.createElement("input");
-    checkbox.setAttribute("type", "checkbox");
-    checkbox.setAttribute("class", "donate-li-checkbox");
-    checkbox.setAttribute("value", bookISBN);
+    div.addEventListener("click", function(){
+        var currentClass = this.getAttribute("class");
+        if(currentClass.includes(selectedLiClass)){
+            this.setAttribute("class", currentClass.split(" ")[0])
+        }else{
+            this.setAttribute("class", currentClass + selectedLiClass);
+        }
+    });
     //Image
     var img = document.createElement("img");
     img.setAttribute("class", "donate-li-img");
@@ -36,11 +41,9 @@ for(var book of userBooks[1]){
     subdiv.appendChild(title);
     subdiv.appendChild(info);
     //Join the elements
-    div.appendChild(checkbox);
     div.appendChild(img);
     div.appendChild(subdiv);
     li.appendChild(div);
-    //CREATE DIV COM JS E CRIAR LA DENTRO UM CHECKBOX, UMA IMAGEPLACEHOLDER E UMA CAIXA DE TEXTO PARA DESCREVER
     donatable.appendChild(li);
 }
 
@@ -53,7 +56,7 @@ donateButton.addEventListener("click", function(){
     }
     var checkedBooks = [];
     for(var li of list.children)
-        if(li.firstChild.children[0].checked)
+        if(li.firstChild.getAttribute("class").includes(selectedLiClass))
             checkedBooks.push(li.id);
     if(checkedBooks.length==0)
         window.alert("Nenhum livro selecionado!");
