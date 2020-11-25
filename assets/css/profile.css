@@ -47,6 +47,7 @@
     color:#2c3e50;
     cursor: pointer;
     text-align: center;
+    transition: .2s ease;
 }
 
 .edit-details-btn:hover { 
@@ -109,6 +110,7 @@
     color: #ffffff;
     padding-left: 30px;
     cursor: pointer;
+    transition: .2s ease;
 }
 
 .message:hover {
@@ -140,6 +142,7 @@
     border-width: 2px;
     border-radius: 50rem!important;
     cursor: pointer;
+    transition: .2s ease;
 }
 
 .add-btn:hover{
@@ -166,6 +169,7 @@
     color: #ffffff;
     cursor: pointer;
     margin-bottom: 30px;
+    transition: .2s ease;
 }
 
 .book-info {
@@ -198,12 +202,27 @@
 }
 
 .trash-book{
-    margin-left: 20%;
-    margin-right: 5%;
+    position: absolute;
+    margin-left: 68%;
     color: #5e5e5e;
     width: 1%;
+    transition: .2s ease;
 }
 
 .trash-book:hover{
     color: #ffffff;
+}
+
+.no-content {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.no-content-info {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+
 }
