@@ -12,3 +12,47 @@
     border-radius: 5px;
     height: 500px;
 }
+
+.share {
+    display: grid;
+    place-items: center;
+
+}
+
+.checked {
+    color: orange;
+}
+
+.person-name {
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.message-img {
+    height: 60px;
+    border-radius: 20rem;
+    margin-top: 10px;
+}
+
+.message-img-wrapper {
+    width: 50px!important;
+    margin-right: 40px!important;
+}
+
+.message {
+    background-color: #18bc9c;
+    border-width: 2px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    border-radius: 2rem!important;
+    padding: .5rem 1rem;
+    width: 70%;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #ffffff;
+    padding-left: 30px;
+    cursor: pointer;
+}
