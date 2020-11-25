@@ -19,6 +19,24 @@ var books = '{ "books" : [' +
     '{"name" : "Brave New World", "author" : "Aldous Huxley", "year" : 1932, "genre" : ["Romance, Ficção Científica, Ficção Distópica"], "isbn" : 286061548}' +
 ']}';
 
+var ecorep = '{ "ecorep" : [' +
+    '{ "512278208" : 2},' +
+    '{ "309998648" : 1},' +
+    '{ "286061548" : 4},' +
+    '{ "987654321" : 1},' +
+    '{ "709026838" : 3},' +
+    '{ "123456789" : 1}' +
+']}';
+
+var catalog = '{ "catalog" : [' +
+    '{ "123456789" : [1,3] },' +
+    '{ "987654321" : [1] },' +
+    '{ "200738799" : [1,4] },' +
+    '{ "709026838" : [2,5] },' +
+    '{ "512278208" : [4,6] },' +
+    '{ "591171946" : [6] }' +
+']}';
+
 var authors = '{"authors" : [' +
     '"J. K. Rowling",' +
     '"Luís Sepúlveda",' +
@@ -66,5 +84,7 @@ loadToStorage(booksConst, JSON.parse(books));
 loadToStorage(usersConst, JSON.parse(users));
 loadToStorage(authorsConst, JSON.parse(authors));
 loadToStorage(genresConst, JSON.parse(genres));
+loadToStorage(ecorepConst, JSON.parse(ecorep));
+loadToStorage(catalogConst, JSON.parse(catalog));
 localStorage.setItem(loggedConst, getFromStorage(usersConst).users[0].id);
 

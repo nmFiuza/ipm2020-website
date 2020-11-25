@@ -163,10 +163,18 @@ var shareBtnAdd = document.getElementById("share-btn-add");
 var wishBtnAdd = document.getElementById("wish-btn-add");
 
 shareBtnAdd.onclick = function(){
-    var isbn = document.getElementById("share-isbn");
-    var title = document.getElementById("share-title");
-    var author = document.getElementById("share-author");
-    var year = document.getElementById("share-year");
+    var isbn = document.getElementById("share-isbn").value;
+    var title = document.getElementById("share-title").value;
+    var author = document.getElementById("share-author").value;
+    var year = document.getElementById("share-year").value;
+    var genre = document.getElementById("share-genres").value;
+    
+    var a = getFromStorage(authorsConst);
+    if(!a.authors.includes(author)){
+        a.authors.push(author);
+        loadToStorage(authorsConst, a);
+        //window.location.reload();
+    }
 
     var usersJSON = getFromStorage(usersConst);  
     for(var user of usersJSON.users) {
