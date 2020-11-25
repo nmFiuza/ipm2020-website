@@ -31,6 +31,8 @@ function displayNextImage() {
 }
 var imgRandTime = setInterval(displayNextImage, 30);
 
+
+//VER SE É PRECISO, O LIVRO QUE ENCOMENDAMOS PODE NAO TER DE IR PROS AVAILABLE
 function confirmOrder(){
     var usersJSON = getFromStorage(usersConst);
     for(var user of usersJSON.users)

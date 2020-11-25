@@ -25,8 +25,8 @@ function midOption(){
         return;
     }
     if(confirm("Tem a certeza que pretende gastar " + midOptionConst + " pontos?")){
-        removePointsFromUser(cheapOptionConst);
-        window.location.href = "random_mistery.html";
+        removePointsFromUser(midOptionConst);
+        window.location.href = "author_category_mistery.html";
     }
 }
 
@@ -36,7 +36,7 @@ function expensiveOption(){
         return;
     }
     if(confirm("Tem a certeza que pretende gastar " + expensiveOptionConst + " pontos?")){
-        removePointsFromUser(cheapOptionConst);
+        removePointsFromUser(expensiveOptionConst);
         window.location.href = "random_mistery.html";
     }
 }
