@@ -175,3 +175,17 @@ body {
 .wrapper.collapser .sidebar ul li a span.title {
   display: none;
 }
+
+
+
+
+.header_username {
+  color: #18bc9c;
+  padding-right: 10px;
+}
+
+.header_divider {
+  width: 1px;
+  margin: 4px 6px;
+  background: rgb(199, 198, 198);
+}
