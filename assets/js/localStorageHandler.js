@@ -60,3 +60,17 @@ function getUserBooks(id){
     var listed = userInfo.available;
     return [bookList.filter(b => wishlist.includes(b.isbn)),bookList.filter(b => listed.includes(b.isbn))];
 }
+
+/**
+ * Returns the ids of the users that have the book with the given isbn
+ * 
+ * @param isbn Isbn of the book.
+ * @return {array} Returns an array with all ids of the users that possess the book.
+ */
+function getUsersWithGivenIsbn(isbn){
+    var bookList = getFromStorage(catalogConst).catalog;
+    for (var book of bookList)
+        if(book.isbn == isbn){
+            return book.ids;
+        }
+}

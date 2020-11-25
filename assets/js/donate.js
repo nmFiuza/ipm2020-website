@@ -60,8 +60,11 @@ donateButton.addEventListener("click", function(){
             checkedBooks.push(li.id);
     if(checkedBooks.length==0)
         window.alert("Nenhum livro selecionado!");
-    else    
+    else{
         removeBooksFromUser(checkedBooks);
+        addBooksToEcoRep(checkedBooks);
+    }    
+        
 });
 
 
@@ -74,5 +77,22 @@ function removeBooksFromUser(checkedBooks){
         }
     }
     loadToStorage(usersConst, usersJSON);
+}
+
+function addBooksToEcoRep(checkedBooks){
+    var ecorep = getFromStorage(ecorepConst);
+    var ecorepBooks = ecorep.ecorep;
+    for(var book of ecorepBooks){
+        if(checkedBooks.includes(book.isbn.toString())){
+            book.qtd++;
+            checkedBooks.splice(checkedBooks.indexOf(book.isbn.toString()), 1);
+        }
+    }
+    if(checkedBooks.length > 0){
+        for(var isbn of checkedBooks){
+            ecorepBooks.push({"isbn" : parseInt(isbn), "qtd" : 1});
+        }
+    }
+    loadToStorage(ecorepConst, ecorep);
     window.location.reload();
 }
