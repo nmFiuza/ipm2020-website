@@ -236,12 +236,6 @@ wishBtnAdd.onclick = function(){
             else{
                 user.wishlist.push(isbn)
                 loadToStorage(usersConst, u);
-
-                var a = getFromStorage(authorsConst);
-                if(!a.authors.includes(author)){
-                    a.authors.push(author);
-                    loadToStorage(authorsConst, a);
-                }
             
                 var b = getFromStorage(booksConst);
                 if(b.books.filter(bk => bk.isbn == isbn).length === 0){
@@ -253,18 +247,6 @@ wishBtnAdd.onclick = function(){
                     b.books.push(book);
                     loadToStorage(booksConst, b);
                 }
-            
-                var c = getFromStorage(catalogConst);
-                var bool = false;
-                for(var bk of c.catalog){
-                    if(bk.isbn == isbn){
-                        bk.ids.push(logged.id);
-                        bool = true;
-                    }
-                }
-                if(!bool)
-                    c.catalog.push({"isbn": isbn, "ids": [logged.id]})
-                loadToStorage(catalogConst, c);
                 window.location.reload();
             }
         }
