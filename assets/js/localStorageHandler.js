@@ -8,6 +8,7 @@ const ecorepConst = "ecorep";
 const loggedConst = "logged";
 const singleAuthorConst = "author";
 const singleGenreConst = "genre";
+const selectedBookConst = "selectedBook";
 const donationWorth = 100;
 
 /**

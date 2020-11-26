@@ -12,14 +12,18 @@ var counter = 0;
 //Check if there are inputs for a chosen author/genre
 var chosenAuthor = getFromStorage(singleAuthorConst);
 var chosenGenre = getFromStorage(singleGenreConst);
-
-if(chosenAuthor){//different from empty
+var selectedBook = getFromStorage(selectedBookConst);
+if(selectedBook){
+    books = books.filter(b => b.isbn == parseInt(selectedBook));
+    numIter = 2;
+} else if(chosenAuthor){//different from empty
     books = books.filter(b => b.author == chosenAuthor);
-    numIter = Math.floor(Math.random()) * books.length * 2 + 10;
+    numIter = Math.floor(Math.random() * books.length * 2) + 10;
 } else if (chosenGenre){
     books = books.filter(b => b.genre[0].includes(chosenGenre));
-    numIter = Math.floor(Math.random()) * books.length * 2 + 10;
+    numIter = Math.floor(Math.random() * books.length * 2) + 10;
 }
+
 
 
 
@@ -39,6 +43,8 @@ function displayNextImage() {
             randimg.src = "../img/books/" + randomizedBook + ".jpg";
         }
         document.getElementById("confirm_mystery").setAttribute("style", "margin: 50px;");
+        console.log(randomizedBook);
+        loadToStorage(selectedBookConst, randomizedBook.toString());
         return;
     }
     randomizedBook = books[counter % (books.length)].isbn
@@ -68,6 +74,7 @@ function confirmOrder() {
     }
     loadToStorage(singleAuthorConst, "");
     loadToStorage(singleGenreConst, "");
+    loadToStorage(selectedBookConst, "");
     loadToStorage(ecorepConst, ecorep);
     askToAddToLibrary();
     window.location.href = "ecorep.html";

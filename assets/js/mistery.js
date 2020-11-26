@@ -24,10 +24,7 @@ function midOption(){
         window.alert("Pontos insuficientes, necessita mais " + (midOptionConst-userPoints) + " pontos");
         return;
     }
-    if(confirm("Tem a certeza que pretende gastar " + midOptionConst + " pontos?")){
-        removePointsFromUser(midOptionConst);
-        window.location.href = "author_category_mistery.html";
-    }
+    window.location.href = "author_category_mistery.html";
 }
 
 function expensiveOption(){

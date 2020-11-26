@@ -2,6 +2,7 @@ const activeClassConst = " active-param";
 const activeFormConst = "active-form";
 const authorButtonClassConst = "switch-author";
 const categoryButtonClassConst = "switch-category";
+const midOptionConst = 300;
 
 var logged = getLogged();
 var userPoints = logged.points;
@@ -42,23 +43,14 @@ var author_dd = document.getElementById("author_dropdown");
 var genres_dd = document.getElementById("category_dropdown");
 var confirm_button = document.getElementById("confirm");
 var ecorep = getFromStorage(ecorepConst).ecorep;
-genres = []
+var genres = []
+var authors = [];
 for(var er of ecorep){
     if(!userAvailableBooks.includes(er.isbn)){
-        var option = document.createElement("option");
-        option.innerHTML = er.author;
-        option.setAttribute("value", er.author);
-        author_dd.appendChild(option);
-        
-        if(er.genre[0].includes(",")){
-            var newGenres = er.genre[0].split(",");
-            genres = genres.concat(newGenres);
-        }else{
-            genres.push(er.genre[0]);
-        }
+        authors.push(er.author);
+        genres = genres.concat(er.genre);
     }
 }
-genres = genres.map(s => s.trim());
 var uniqueGenres = [];
 $.each(genres, function(i, el){
     if($.inArray(el, uniqueGenres) === -1) uniqueGenres.push(el);
@@ -69,6 +61,17 @@ for(var genre of uniqueGenres){
     option.innerHTML = genre
     option.setAttribute("value", genre);
     genres_dd.appendChild(option);
+}
+var uniqueAuthors = [];
+$.each(authors, function(i, el){
+    if($.inArray(el, uniqueAuthors) === -1) uniqueAuthors.push(el);
+});
+uniqueAuthors = uniqueAuthors.sort();
+for(var author of uniqueAuthors){
+    var option = document.createElement("option");
+    option.innerHTML = author;
+    option.setAttribute("value", author);
+    author_dd.appendChild(option);
 }
 
 function authorSelected(){
@@ -90,7 +93,18 @@ function activeButton(){
 }
 
 function confirmOrder(){
-    var isAuthorSelected = author_dd.value == "default" ? false : true;
-    isAuthorSelected ? loadToStorage(singleAuthorConst, author_dd.value) : loadToStorage(singleGenreConst, genres_dd.value)
-    window.location.href = "random_mistery.html";
+    if(confirm("Tem a certeza que pretende gastar " + midOptionConst + " pontos?")){
+        removePointsFromUser(midOptionConst);
+        var isAuthorSelected = author_dd.value == "default" ? false : true;
+        isAuthorSelected ? loadToStorage(singleAuthorConst, author_dd.value) : loadToStorage(singleGenreConst, genres_dd.value)
+        window.location.href = "random_mistery.html";
+    }
+}
+
+function removePointsFromUser(points){
+    var usersJSON = getFromStorage(usersConst);
+    for(var user of usersJSON.users)
+        if(user.id == logged.id)
+            user.points -= points;
+    loadToStorage(usersConst, usersJSON);
 }
