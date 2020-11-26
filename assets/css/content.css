@@ -6,6 +6,10 @@ html{
     background-image: url("../img/shelf.jfif");
 }
 
+.hidden{
+    display: none;
+}
+
 .eco-rep-back {
     padding-top: 15rem;
     padding-bottom: 5rem;
@@ -40,6 +44,13 @@ html{
     margin: 40px;
 }
 
+.eco-rep-button:disabled,
+.eco-rep-button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 @media (max-width: 768px) {
     .btn-responsive {
         padding:2px 4px;
@@ -56,8 +67,6 @@ html{
         line-height: 1.2;
     }
 }
-
-
 
 .li-element{
     padding: 15px;
@@ -78,8 +87,12 @@ html{
     background-color:#077962;
 }
 
+.donate-element-selected:hover {
+    background-color:#065848!important;
+}
+
 .donate-element:hover{
-    background-color:#077962;
+    background-color:#16a186;
 }
 
 .donate-li-checkbox{
@@ -164,4 +177,14 @@ html{
 .active-param{
     background-color: #18bc9c;
     color: white;
+}
+
+.active-form{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.form-container{
+    margin: 2rem;
 }
