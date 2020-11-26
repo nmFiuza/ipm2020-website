@@ -6,6 +6,8 @@ const genresConst = "genres";
 const catalogConst = "catalog";
 const ecorepConst = "ecorep";
 const loggedConst = "logged";
+const singleAuthorConst = "author";
+const singleGenreConst = "genre";
 const donationWorth = 100;
 
 /**
@@ -72,5 +74,21 @@ function getUsersWithGivenIsbn(isbn){
     for (var book of bookList)
         if(book.isbn == isbn){
             return book.ids;
+        }
+}
+
+function getGenreWithGivenIsbn(isbn){
+    var bookList = getFromStorage(booksConst).books;
+    for (var book of bookList)
+        if(book.isbn == isbn){
+            return book.genre;
+        }
+}
+
+function getAuthorWithGivenIsbn(isbn){
+    var bookList = getFromStorage(booksConst).books;
+    for (var book of bookList)
+        if(book.isbn == isbn){
+            return book.author;
         }
 }

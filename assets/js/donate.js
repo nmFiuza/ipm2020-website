@@ -5,6 +5,7 @@ var logged = getLogged();
 var points = document.getElementById("ecoPoints");
 points.innerHTML = logged.points;
 var userBooks = getUserBooks(logged.id);
+var bookList = getFromStorage(booksConst).books;
 
 var donateButton = document.getElementById("donate_button");
 if(userBooks[1].length <=0){
@@ -65,11 +66,27 @@ donateButton.addEventListener("click", function(){
         window.alert("Nenhum livro selecionado!");
     else{
         removeBooksFromUser(checkedBooks);
+        removeBooksFromCatalog(checkedBooks);
         addBooksToEcoRep(checkedBooks);
     }    
         
 });
 
+function removeBooksFromCatalog(checkedBooks){
+    var catalogInfo = getFromStorage(catalogConst);
+    var catalog = catalogInfo.catalog;
+    var toKeep = [];
+    for(var i = 0; i < catalog.length; i++){
+        if(checkedBooks.includes(catalog[i].isbn.toString())){
+            catalog[i].ids.splice(catalog[i].ids.indexOf(logged.id),1);
+        }
+        if(catalog[i].ids.length != 0){
+            toKeep.push(catalog[i]);
+        }
+    }
+    catalogInfo.catalog = toKeep;
+    loadToStorage(catalogConst, catalogInfo)
+}
 
 function removeBooksFromUser(checkedBooks){
     var usersJSON = getFromStorage(usersConst);
@@ -93,7 +110,9 @@ function addBooksToEcoRep(checkedBooks){
     }
     if(checkedBooks.length > 0){
         for(var isbn of checkedBooks){
-            ecorepBooks.push({"isbn" : parseInt(isbn), "qtd" : 1});
+            var author = getAuthorWithGivenIsbn(isbn);
+            var genre = getGenreWithGivenIsbn(isbn);
+            ecorepBooks.push({"isbn" : parseInt(isbn), "author" : author, "genre" : genre, "qtd" : 1});
         }
     }
     loadToStorage(ecorepConst, ecorep);

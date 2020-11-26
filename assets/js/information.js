@@ -20,11 +20,11 @@ var books = '{ "books" : [' +
 ']}';
 
 var ecorep = '{ "ecorep" : [' +
-    '{ "isbn": 512278208, "qtd" : 2},' +
-    '{ "isbn": 309998648, "qtd" : 3},' +
-    '{ "isbn": 286061548, "qtd" : 2},' +
-    '{ "isbn": 987654321, "qtd" : 5},' +
-    '{ "isbn": 709026838, "qtd" : 4}' +
+    '{ "isbn": 512278208, "author": "Thomas Hardy", "genre" : ["Romance"], "qtd" : 2},' +
+    '{ "isbn": 309998648, "author" : "Don Norman", "genre" : ["Dissertação"], "qtd" : 3},' +
+    '{ "isbn": 286061548, "author" : "Aldous Huxley", "genre" : ["Romance, Ficção Científica, Ficção Distópica"], "qtd" : 2},' +
+    '{ "isbn": 987654321, "author" : "Luís Sepúlveda", "genre" : ["Romance"], "qtd" : 5},' +
+    '{ "isbn": 709026838, "author" : "Rick Riordan", "genre" : ["Mitologia Grega, Romance, Ficção Jovem, Fantasia"], "qtd" : 4}' +
 ']}';
 
 var catalog = '{ "catalog" : [' +
@@ -85,5 +85,7 @@ loadToStorage(authorsConst, JSON.parse(authors));
 loadToStorage(genresConst, JSON.parse(genres));
 loadToStorage(ecorepConst, JSON.parse(ecorep));
 loadToStorage(catalogConst, JSON.parse(catalog));
+loadToStorage(singleAuthorConst, "");
+loadToStorage(singleGenreConst, "");
 localStorage.setItem(loggedConst, getFromStorage(usersConst).users[0].id);
 

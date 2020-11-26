@@ -9,6 +9,11 @@ var points = document.getElementById("ecoPoints");
 points.innerHTML = userPoints;
 var userBooks = getUserBooks(logged.id);
 
+var userAvailableBooks = [];
+for(var b of userBooks[1]){
+    userAvailableBooks.push(b.isbn);
+}
+
 function changeButton(div) {
     document.getElementById("switch_author").setAttribute("class", authorButtonClassConst);
     document.getElementById("switch_category").setAttribute("class", categoryButtonClassConst);
@@ -36,17 +41,32 @@ function changeFormCategory(div){
 var author_dd = document.getElementById("author_dropdown");
 var genres_dd = document.getElementById("category_dropdown");
 var confirm_button = document.getElementById("confirm");
-var authors = getFromStorage(authorsConst).authors;
-var genres = getFromStorage(genresConst).genres;
-for(var author of authors){
-    var option = document.createElement("option");
-    option.innerHTML = author;
-    option.setAttribute("value", author);
-    author_dd.appendChild(option);
+var ecorep = getFromStorage(ecorepConst).ecorep;
+genres = []
+for(var er of ecorep){
+    if(!userAvailableBooks.includes(er.isbn)){
+        var option = document.createElement("option");
+        option.innerHTML = er.author;
+        option.setAttribute("value", er.author);
+        author_dd.appendChild(option);
+        
+        if(er.genre[0].includes(",")){
+            var newGenres = er.genre[0].split(",");
+            genres = genres.concat(newGenres);
+        }else{
+            genres.push(er.genre[0]);
+        }
+    }
 }
-for(var genre of genres){
+genres = genres.map(s => s.trim());
+var uniqueGenres = [];
+$.each(genres, function(i, el){
+    if($.inArray(el, uniqueGenres) === -1) uniqueGenres.push(el);
+});
+uniqueGenres = uniqueGenres.sort();
+for(var genre of uniqueGenres){
     var option = document.createElement("option");
-    option.innerHTML = genre;
+    option.innerHTML = genre
     option.setAttribute("value", genre);
     genres_dd.appendChild(option);
 }
@@ -67,4 +87,10 @@ function activeButton(){
     } else{
         confirm_button.disabled = false;
     }
+}
+
+function confirmOrder(){
+    var isAuthorSelected = author_dd.value == "default" ? false : true;
+    isAuthorSelected ? loadToStorage(singleAuthorConst, author_dd.value) : loadToStorage(singleGenreConst, genres_dd.value)
+    window.location.href = "random_mistery.html";
 }
