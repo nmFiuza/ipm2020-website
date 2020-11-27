@@ -53,4 +53,15 @@ function filterBooks(){
     if(!hasFilter){
         filtered_books = catalog_books;
     }
+    window.location.reload();
+}
+
+function clearFilter(){
+    filtered_books = catalog_books;
+    dropdown_book.value = "";
+    dropdown_author.value = "";
+    dropdown_year.value = "";
+    dropdown_genre.value = "";
+    dropdown_isbn.value = "";
+    window.location.reload();
 }

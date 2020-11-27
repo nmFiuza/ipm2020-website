@@ -260,21 +260,48 @@ body {
   border-radius: 8px;
 }
 
-.eco-rep-button {
+.catalog-button {
   background-color: #18bc9c;
   border-radius: 50rem!important;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 25px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  max-width: 200px;
+  max-width: 250px;
   margin: 20px;
   transition: .5s ease;
+  outline:none;
+}
+.catalog-button-trash {
+  background-color: white;
+  border-radius: 50rem!important;
+  border: 2px solid black;
+  color: black;
+  padding: 13px 28px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  max-width: 250px;
+  margin: 20px;
+  float: right;
+  transition: .5s ease;
+}
+.catalog-button-trash:focus{
+  outline:none!important;
 }
 
-.eco-rep-button:hover{
+.catalog-button:focus{
+  outline:none!important;
+}
+
+.catalog-button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.catalog-button-trash:hover{
   cursor: pointer;
   transform: scale(1.1);
 }

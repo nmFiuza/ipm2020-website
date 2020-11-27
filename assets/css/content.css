@@ -43,6 +43,9 @@ html{
     margin: 40px;
     transition: .5s ease;
 }
+.eco-rep-button:focus{
+    outline:none!important;
+}
 
 .eco-rep-button:hover{
     cursor: pointer;
