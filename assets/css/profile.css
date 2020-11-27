@@ -227,7 +227,6 @@
     background-color: #18bc9c; 
     border-radius: 2rem!important; 
     color: #ffffff;
-    cursor: pointer;
     margin-bottom: 30px;
     transition: .2s ease;
 }
@@ -251,15 +250,12 @@
     font-weight: 700;
     font-size: 1.5rem;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .book-text {
     font-weight: 500;
     font-size: 1rem;
-}
-
-.book:hover {
-    background-color: #16a084;
 }
 
 .book-name:hover {
@@ -272,6 +268,7 @@
     color: #5e5e5e;
     width: 1%;
     transition: .2s ease;
+    cursor: pointer;
 }
 
 .trash-book:hover{
