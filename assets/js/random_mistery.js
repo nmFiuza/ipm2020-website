@@ -14,7 +14,7 @@ var chosenAuthor = getFromStorage(singleAuthorConst);
 var chosenGenre = getFromStorage(singleGenreConst);
 var selectedBook = getFromStorage(selectedBookConst);
 if(selectedBook){
-    books = books.filter(b => b.isbn == parseInt(selectedBook));
+    books = books.filter(b => b.isbn == selectedBook);
     numIter = 2;
 } else if(chosenAuthor){//different from empty
     books = books.filter(b => b.author == chosenAuthor);
@@ -23,9 +23,6 @@ if(selectedBook){
     books = books.filter(b => b.genre[0].includes(chosenGenre));
     numIter = Math.floor(Math.random() * books.length * 2) + 10;
 }
-
-
-
 
 var randimg = document.getElementById("randimg");
 var randomizedBook;

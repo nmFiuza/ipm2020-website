@@ -112,7 +112,7 @@ function addBooksToEcoRep(checkedBooks){
         for(var isbn of checkedBooks){
             var author = getAuthorWithGivenIsbn(isbn);
             var genre = getGenreWithGivenIsbn(isbn);
-            ecorepBooks.push({"isbn" : parseInt(isbn), "author" : author, "genre" : genre, "qtd" : 1});
+            ecorepBooks.push({"isbn" : isbn, "author" : author, "genre" : genre, "qtd" : 1});
         }
     }
     loadToStorage(ecorepConst, ecorep);
