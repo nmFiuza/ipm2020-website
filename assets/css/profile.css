@@ -250,6 +250,7 @@
 .book-name {
     font-weight: 700;
     font-size: 1.5rem;
+    color: #ffffff;
 }
 
 .book-text {
@@ -261,9 +262,13 @@
     background-color: #16a084;
 }
 
+.book-name:hover {
+    color: #ffffff;
+}
+
 .trash-book{
     position: absolute;
-    margin-left: 68%;
+    left: 80%;
     color: #5e5e5e;
     width: 1%;
     transition: .2s ease;

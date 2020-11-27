@@ -1,6 +1,6 @@
 
 var logged = getLogged();
-var imageBooks = [123456789, 987654321, 512278208, 591171946, 709026838, 309998648, 200738799, 681860960, 286061548];
+var imageBooks = [123456789, 987654321, 512278208, 591171946, 709026838, 309998648, 200738799, 681860960, 286061548, 772272548, 934683429, 666532112, 534321113, 878633222];
 document.getElementById("user-name").innerHTML = logged.firstname + " " + logged.surname;
 document.getElementById("user-email").innerHTML = logged.email;
 document.getElementById("user-address").innerHTML = logged.morada;
@@ -16,63 +16,64 @@ if(userBooks[0].length > 0)
 if(userBooks[1].length > 0)
     sharelist.removeChild(document.getElementById("no-content-sharelist"));
 
-for(var book of userBooks[1]){
-    var li = document.createElement("li");
-    li.setAttribute("id", book.isbn);
-    li.setAttribute("class", "book");
+    for(var book of userBooks[1]) {
+        var li = document.createElement("li");
+        li.setAttribute("id", book.isbn);
+        li.setAttribute("class", "book");
+        
+        var img = document.createElement("img");
+        img.setAttribute("class", "book-img");
+        if (!imageBooks.includes(book.isbn)) {
+            img.setAttribute("src", "../img/books/default-book.jpg");
+        } else {
+            img.setAttribute("src", "../img/books/" + book.isbn + ".jpg");
+        }
     
-    var img = document.createElement("img");
-    img.setAttribute("class", "book-img");
-    if (!imageBooks.includes(book.isbn)) {
-        img.setAttribute("src", "../img/books/default-book.jpg");
-    } else {
-        img.setAttribute("src", "../img/books/" + book.isbn + ".jpg");
-    }
-
-    var div = document.createElement("div");
-    div.setAttribute("class", "book-info");
-
-    var title = document.createElement("div");
-    title.setAttribute("class", "book-name");
-    title.innerHTML = book.name;
-
-    var info = document.createElement("div");
-    info.setAttribute("class", "book-text");
-    info.innerHTML = book.author + ", " + book.year;
-
-    div.appendChild(title);
-    div.appendChild(info);
-
-    var icon = document.createElement("i");
-    icon.setAttribute("id", "trash-" + book.isbn);
-    icon.setAttribute("class", "fas fa-trash trash-book");
-    icon.addEventListener("click", function() {
-        var usersJSON = getFromStorage(usersConst);  
-        for(var user of usersJSON.users){
-            if(user.id == logged.id){
-                user.available = user.available.filter(b => b!=this.getAttribute("id").split("-")[1])
-                if(user.available.length){
-                    var noContent = document.createElement("div");
-                    noContent.setAttribute("id", "no-content-sharelist");
-                    var first = document.createElement("div");
-                    first.innerHTML = "Sem Conteúdo";
-                    var second = document.createElement("div");
-                    second.innerHTML = "Clique em '+ Adicionar Livro' para disponibilizar um livro para troca.";
-                    noContent.appendChild(first);
-                    noContent.appendChild(second);
-                    li.appendChild(noContent);
+        var div = document.createElement("div");
+        div.setAttribute("class", "book-info");
+    
+        var title = document.createElement("a");
+        title.setAttribute("class", "book-name");
+        title.setAttribute("href", 'book.html?id=' + book.isbn);
+        title.innerHTML = book.name;
+    
+        var info = document.createElement("div");
+        info.setAttribute("class", "book-text");
+        info.innerHTML = book.author + ", " + book.year;
+    
+        div.appendChild(title);
+        div.appendChild(info);
+    
+        var icon = document.createElement("i");
+        icon.setAttribute("id", "trash-" + book.isbn);
+        icon.setAttribute("class", "fas fa-trash trash-book");
+        icon.addEventListener("click", function() {
+            var usersJSON = getFromStorage(usersConst);  
+            for(var user of usersJSON.users){
+                if(user.id == logged.id){
+                    user.available = user.available.filter(b => b!=this.getAttribute("id").split("-")[1])
+                    if(user.available.length){
+                        var noContent = document.createElement("div");
+                        noContent.setAttribute("id", "no-content-sharelist");
+                        var first = document.createElement("div");
+                        first.innerHTML = "Sem Conteúdo";
+                        var second = document.createElement("div");
+                        second.innerHTML = "Clique em '+ Adicionar Livro' para disponibilizar um livro para troca.";
+                        noContent.appendChild(first);
+                        noContent.appendChild(second);
+                        li.appendChild(noContent);
+                    }
                 }
             }
-        }
-        loadToStorage(usersConst, usersJSON);
-        window.location.reload();
-    })
-
-    li.appendChild(img);
-    li.appendChild(div);
-    li.appendChild(icon);
-    sharelist.appendChild(li);
-}   
+            loadToStorage(usersConst, usersJSON);
+            window.location.reload();
+        })
+    
+        li.appendChild(img);
+        li.appendChild(div);
+        li.appendChild(icon);
+        sharelist.appendChild(li);
+    }   
 
 for(var book of userBooks[0]){
     var li = document.createElement("li");
