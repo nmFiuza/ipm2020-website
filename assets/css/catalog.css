@@ -8,18 +8,28 @@ body {
   font-weight: 400;
 }
 
+.widget-26 td{
+  display: flex; 
+  align-items: center;
+  height:100px; 
+  float: left; 
+  margin-left: 30px;
+  text-align: left;
+}
+
 .widget-26 tr:first-child td {
   border: 0;
 }
 
-.widget-26 .widget-26-job-emp-img img {
-  width: 35px;
-  height: 35px;
+.widget-26 .widget-26-book-img img {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+  margin-left: 0px!important;
 }
 
 .widget-26 .widget-26-book-title {
-  min-width: 200px;
+  width: 100%;
 }
 
 .widget-26 .widget-26-book-title a {
@@ -32,6 +42,7 @@ body {
 .widget-26 .widget-26-book-title a:hover {
   color: #68CBD7;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .widget-26 .widget-26-book-title .employer-name {
@@ -54,7 +65,7 @@ body {
 }
 
 .widget-26 .widget-26-book-info {
-  min-width: 100px;
+  width: 100%;
   font-weight: 400;
 }
 
@@ -68,21 +79,21 @@ body {
   color: #3c4142;
 }
 
-.widget-26 .widget-26-job-salary {
+.widget-26 .widget-26-genre {
   min-width: 70px;
   font-weight: 400;
   color: #3c4142;
   font-size: 0.8125rem;
 }
 
-.widget-26 .widget-26-job-category {
+.widget-26 .widget-26-availability {
   padding: .5rem;
   display: inline-flex;
   white-space: nowrap;
   border-radius: 15px;
 }
 
-.widget-26 .widget-26-job-category .indicator {
+.widget-26 .widget-26-availability .indicator {
   width: 13px;
   height: 13px;
   margin-right: .5rem;
@@ -90,20 +101,10 @@ body {
   border-radius: 50%;
 }
 
-.widget-26 .widget-26-job-category span {
+.widget-26 .widget-26-availability span {
   font-size: 0.8125rem;
   color: #3c4142;
   font-weight: 600;
-}
-
-.widget-26 .widget-26-job-starred svg {
-  width: 20px;
-  height: 20px;
-  color: #fd8b2c;
-}
-
-.widget-26 .widget-26-job-starred svg.starred {
-  fill: #fd8b2c;
 }
 
 .bg-soft-base {
