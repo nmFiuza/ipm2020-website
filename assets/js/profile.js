@@ -1,6 +1,6 @@
 
 var logged = getLogged();
-var imageBooks = [123456789, 987654321, 512278208, 591171946, 709026838, 309998648, 200738799, 681860960, 286061548, 772272548, 934683429, 666532112, 534321113, 878633222];
+var imageBooks = ["123456789", "987654321", "512278208", "591171946", "709026838", "309998648", "200738799", "681860960", "286061548", "772272548", "934683429", "666532112", "534321113", "878633222"];
 document.getElementById("user-name").innerHTML = logged.firstname + " " + logged.surname;
 document.getElementById("user-email").innerHTML = logged.email;
 document.getElementById("user-address").innerHTML = logged.morada;
@@ -91,8 +91,9 @@ for(var book of userBooks[0]){
     var div = document.createElement("div");
     div.setAttribute("class", "book-info");
 
-    var title = document.createElement("div");
+    var title = document.createElement("a");
     title.setAttribute("class", "book-name");
+    title.setAttribute("href", 'book.html?id=' + book.isbn);
     title.innerHTML = book.name;
 
     var info = document.createElement("div");
