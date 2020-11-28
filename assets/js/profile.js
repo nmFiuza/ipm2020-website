@@ -174,85 +174,100 @@ var shareBtnAdd = document.getElementById("share-btn-add");
 var wishBtnAdd = document.getElementById("wish-btn-add");
 
 shareBtnAdd.onclick = function(){
-    var isbn = parseInt(document.getElementById("share-isbn").value);
+    var isbn = document.getElementById("share-isbn").value;
     var title = document.getElementById("share-title").value;
     var author = document.getElementById("share-author").value;
-    var year = parseInt(document.getElementById("share-year").value);
+    var year = document.getElementById("share-year").value;
     var genre = document.getElementById("share-genres").value;
-        
-    var u = getFromStorage(usersConst);
-    for(var user of u.users){
-        if(user.id == logged.id){
-            if(user.available.includes(isbn))
-                window.alert("Um livro com esse ISBN já se encontra na sua lista de partilha!")
-            else{
-                user.available.push(isbn)
-                loadToStorage(usersConst, u);
 
-                var a = getFromStorage(authorsConst);
-                if(!a.authors.includes(author)){
-                    a.authors.push(author);
-                    loadToStorage(authorsConst, a);
-                }
-            
-                var b = getFromStorage(booksConst);
-                if(b.books.filter(bk => bk.isbn == isbn).length === 0){
-                    var book = {"name": title, 
-                                "author": author,
-                                "year": year,
-                                "genre": [genre],
-                                "isbn": isbn }
-                    b.books.push(book);
-                    loadToStorage(booksConst, b);
-                }
-            
-                var c = getFromStorage(catalogConst);
-                var bool = false;
-                for(var bk of c.catalog){
-                    if(bk.isbn == isbn){
-                        bk.ids.push(logged.id);
-                        bool = true;
+    if(isbn == "" || title == "" || author == "" || year == "" || genre == "")
+        window.alert("Campos não preenchidos!")
+    else {
+        year = parseInt(year);
+        var u = getFromStorage(usersConst);
+        for(var user of u.users){
+            if(user.id == logged.id){
+                if(user.available.includes(isbn))
+                    window.alert("Este livro já se encontra na sua lista de partilha!")
+                else if(user.wishlist.includes(isbn))
+                    window.alert("Não pode ter o mesmo livro em ambas as listas!")
+                else{
+                    user.available.push(isbn)
+                    loadToStorage(usersConst, u);
+
+                    var a = getFromStorage(authorsConst);
+                    if(!a.authors.includes(author)){
+                        a.authors.push(author);
+                        loadToStorage(authorsConst, a);
                     }
+                
+                    var b = getFromStorage(booksConst);
+                    if(b.books.filter(bk => bk.isbn == isbn).length === 0){
+                        var book = {"name": title, 
+                                    "author": author,
+                                    "year": year,
+                                    "genre": [genre],
+                                    "isbn": isbn }
+                        b.books.push(book);
+                        loadToStorage(booksConst, b);
+                    }
+                
+                    var c = getFromStorage(catalogConst);
+                    var bool = false;
+                    for(var bk of c.catalog){
+                        if(bk.isbn == isbn){
+                            bk.ids.push(logged.id);
+                            bool = true;
+                        }
+                    }
+                    if(!bool)
+                        c.catalog.push({"isbn": isbn, "ids": [logged.id]})
+                    loadToStorage(catalogConst, c);
+                    window.location.reload();
                 }
-                if(!bool)
-                    c.catalog.push({"isbn": isbn, "ids": [logged.id]})
-                loadToStorage(catalogConst, c);
-                window.location.reload();
             }
-        }
-    }     
+        }  
+    }    
+       
 }
 
 wishBtnAdd.onclick = function(){
-    var isbn = parseInt(document.getElementById("wish-isbn").value);
+    var isbn = document.getElementById("wish-isbn").value;
     var title = document.getElementById("wish-title").value;
     var author = document.getElementById("wish-author").value;
-    var year = parseInt(document.getElementById("wish-year").value);
+    var year = document.getElementById("wish-year").value;
     var genre = document.getElementById("wish-genres").value;
-        
-    var u = getFromStorage(usersConst);
-    for(var user of u.users){
-        if(user.id == logged.id){
-            if(user.wishlist.includes(isbn))
-                window.alert("Um livro com esse ISBN já se encontra na sua lista de desejos!")
-            else{
-                user.wishlist.push(isbn)
-                loadToStorage(usersConst, u);
-            
-                var b = getFromStorage(booksConst);
-                if(b.books.filter(bk => bk.isbn == isbn).length === 0){
-                    var book = {"name": title, 
-                                "author": author,
-                                "year": year,
-                                "genre": [genre],
-                                "isbn": isbn }
-                    b.books.push(book);
-                    loadToStorage(booksConst, b);
+    
+    if(isbn == "" || title == "" || author == "" || year == "" || genre == "")
+        window.alert("Campos não preenchidos!")
+    else {
+        year = parseInt(year);
+        var u = getFromStorage(usersConst);
+        for(var user of u.users){
+            if(user.id == logged.id){
+                if(user.wishlist.includes(isbn))
+                    window.alert("Este livro já se encontra na sua lista de desejos!")
+                else if(user.available.includes(isbn))
+                    window.alert("Não pode ter o mesmo livro em ambas as listas!")
+                else {
+                    user.wishlist.push(isbn)
+                    loadToStorage(usersConst, u);
+                
+                    var b = getFromStorage(booksConst);
+                    if(b.books.filter(bk => bk.isbn == isbn).length === 0){
+                        var book = {"name": title, 
+                                    "author": author,
+                                    "year": year,
+                                    "genre": [genre],
+                                    "isbn": isbn }
+                        b.books.push(book);
+                        loadToStorage(booksConst, b);
+                    }
+                    window.location.reload();
                 }
-                window.location.reload();
             }
         }
-    }     
+    }   
 }
 
 var shareGenres = document.getElementById("share-genres");
