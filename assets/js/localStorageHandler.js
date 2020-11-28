@@ -93,3 +93,13 @@ function getAuthorWithGivenIsbn(isbn){
             return book.author;
         }
 }
+
+function getCatalogInfo(){
+    var catalog = getFromStorage(catalogConst).catalog;
+    var catalogDict = {};
+    for (var i = 0, isbn; i < catalog.length; i++) {
+        isbn = catalog[i].isbn;
+        catalogDict[ isbn ] = catalog[i].ids;
+    }
+    return catalogDict;
+}
