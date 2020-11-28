@@ -1,98 +1,128 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Home - EcoBook</title>
-    
-    <link rel="stylesheet" href="../css/navbar.css">
-</head>
 
-<body>
-    <div class="wrapper collapse">
-        <div class="top_navbar">
-          <div class="top_menu">
+    <link rel="stylesheet" href="../css/help.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div class="wrapper collapser">
+      <div class="top_navbar">
+        <div class="top_menu">
+          <div class="page_title">
             <div class="logo">
-              <img src="../img/logo.png" class="logo">
+              <img src="../img/logo.png" class="logo" />
             </div>
-            <ul>
-              <li><a href="#">
-                <i class="fas fa-search"></i>
-                </a></li>
-              <li><a href="#">
-                <i class="fas fa-bell"></i>
-                </a></li>
-              <li><a href="#">
-                <i class="fas fa-user"></i>
-                </a></li>
-            </ul>
+            <h1 class="title_text">EcoBook</h1>
           </div>
-        </div>
-        <!-- Adicionar as tags no href das restantes páginas -->
-        <div class="sidebar" id="navbar">
-            <ul>
-              <li><a href="../../homepage.html">
-                <span class="icon"><i class="fas fa-book"></i></span>
-                <span class="title">Inicio</span>
-                </a>
-              </li>
-              <li class="sublist"><a href="#">
-                <span class="icon"><i class="fas fa-book"></i></span>
-                <span class="title">Perfil</span>
-                </a>
-                <div class="subnav">
-                  <a href="profile.html">Ver Perfil</a>
-                  <a href="wishlist.html">Ver Wishlist</a>
-                  <a href="listings.html">Ver Minha Listagem</a>
-                </div>
-              </li>
-              <li><a href="catalog.html">
-                <span class="icon"><i class="fas fa-file-video"></i></span>
-                <span class="title">Catálogos</span>
-                </a></li>
-              <li class="sublist"><a href="#">
-                <span class="icon"><i class="fas fa-volleyball-ball"></i></span>
-                <span class="title">Eco-Repositório</span>
-                </a>
-                <div class="subnav">
-                  <a href="donate.html">Doar Livro</a>
-                  <a href="mistery.html">Caixa Mistério</a>
-                </div>
-              </li>
-              <li><a href="reviews.html">
-                <span class="icon"><i class="fas fa-blog"></i></span>
-                <span class="title">Reviews</span>
-                </a></li>
-              <li><a href="settings.html" class="active">
-                <span class="icon"><i class="fas fa-leaf"></i></span>
-                <span class="title">Definições</span>
-                </a></li>
+          <ul id="header_right-side">
+            <div id="header_username">Hugo Santiago</div>
+            <div id="header_divider"></div>
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-user"></i>
+              </a>
+            </li>
           </ul>
         </div>
-        
-        <div class="main_container">
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-        </div>
       </div>
+      <!-- Adicionar as tags no href das restantes páginas -->
+      <div class="sidebar" id="navbar">
+        <ul>
+          <li>
+            <a href="../../index.html">
+              <span class="icon"><i class="fas fa-home"></i></span>
+              <span style="font-size: 15px" class="title">Inicio</span>
+            </a>
+          </li>
+          <li class="sublist">
+            <a href="#" class="active">
+              <span class="icon"><i class="fas fa-user"></i></span>
+              <span style="font-size: 15px" class="title">Perfil</span>
+            </a>
+            <div class="subnav">
+              <a href="">Ver Perfil</a>
+              <a href="#lista-partilha">Ver Lista de Partilha</a>
+              <a href="#lista-desejos">Ver Lista de Desejos</a>
+            </div>
+          </li>
+          <li>
+            <a href="catalog.html">
+              <span class="icon"><i class="fas fa-book"></i></span>
+              <span style="font-size: 15px" class="title"
+                >Catálogo de Trocas</span
+              >
+            </a>
+          </li>
+          <li class="sublist">
+            <a href="ecorep.html">
+              <span class="icon"><i class="fas fa-leaf"></i></span>
+              <span style="font-size: 15px" class="title">Eco-Repositório</span>
+            </a>
+            <div class="subnav">
+              <a href="donate.html">Doar Livro</a>
+              <a href="mistery.html">Caixa Mistério</a>
+            </div>
+          </li>
+          <li>
+            <a href="settings.html">
+              <span class="icon"><i class="fas fa-question-circle"></i></span>
+              <span style="font-size: 15px" class="title">Ajuda</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <section class="help_section">
+        <div class="help_container">
+          <div class="help_header">
+            <h2 class="text-info" style="color: #0d997d !important">
+              Contacte-nos
+            </h2>
+            <p class="help_p">
+              Preenche estes dados de modo a poder comunicar connosco.
+              Entraremos em contacto assim que possível.
+            </p>
+          </div>
+          <form class="help_form">
+            <div class="form-group">
+              <label>Name</label><input class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+              <label>Subject</label><input class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+              <label>Email</label><input class="form-control" type="email" />
+            </div>
+            <div class="form-group">
+              <label>Message</label><textarea class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn_send_color btn-block" type="submit">
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
 
     <!-- Scripts used -->
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/fontawsome.js"></script>
     <script src="../js/navbar.js"></script>
-
-
-</body>
-
+  </body>
 </html>
