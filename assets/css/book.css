@@ -2,11 +2,18 @@
     padding-top: 80px;
 }
 
+.star-center {
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-top: 1.5rem !important;
+}
+
 .star-center-lg {
     margin: 0 auto;
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
     max-width: 30rem !important;
+    padding-bottom: 30px !important;
 }
 .star-dark:after {
     background-color: #e1ecf2!important ;
@@ -27,8 +34,14 @@
 
 .book-info-box {
     font-size: 1.1rem;
-    padding-left: 20%;
+    padding-left: 25%;
     margin-bottom: 0!important;
+}
+
+.center-vert {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .info-text {
@@ -39,7 +52,6 @@
 .synopsis-box {
     background-color: white;
     border-radius: 5px;
-    height: 100%;
     padding: 25px;
     text-align: justify;
 }
@@ -59,38 +71,37 @@
     color: orange;
 }
 
+.message {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #18bc9c;
+    border-radius: 2rem!important;
+    color: #ffffff;
+    margin-bottom: 30px;
+    transition: .2s ease;
+}
+
+.person-img {
+    width: 10%;
+    vertical-align: middle;
+    margin-left: 8%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20rem;
+}
+
+.person-info {
+    padding-left: 5%;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
 .person-name {
     font-weight: 600;
     font-size: 20px;
-    padding-top: 10px;
-}
-
-.message-img {
-    height: 60px;
-    border-radius: 20rem;
-    margin-top: 10px;
-}
-
-.message-img-wrapper {
-    width: 50px!important;
-    margin-right: 40px!important;
-}
-
-.message {
-    background-color: #18bc9c;
-    border-width: 2px;
-    margin-left: auto!important;
-    margin-right: auto!important;
-    border-radius: 2rem!important;
-    padding: .5rem 1rem;
-    width: 70%;
-    height: 100px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: left;
-    color: #ffffff;
-    padding-left: 30px;
-    cursor: pointer;
 }
 
 .row-person-share {
@@ -102,4 +113,10 @@
     position: relative;
     top: 180px;
     padding-bottom: 100px;
+}
+
+.no-content {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
 }

@@ -79,32 +79,34 @@
         </div>
       </div>
 
-      <div class="row" style="padding-top: 30px;">
+      <div class="row">
         <div class="col-6">
-          <img src="../img/books/123456789.jpg" class="book-img-box" alt="">
-          <ul class="book-info-box"> <br>
-            <li> 
-                <b> Autor </b> 
-                <div id="book-author" class="info-text">J. K. Rowling</div>
-            </li>
-            <li> 
-                <b> ISBN </b>
-                <div id="book-isbn" class="info-text">9780747532699</div>
-            </li>
-            <li> 
-                <b> Género </b>
-                <div id="book-genres" class="info-text">Fantasia/Aventura</div>
-            </li>
-            <li> 
-                <b> Ano </b>
-                <div id="book-year" class="info-text">1997</div>
-            </li>
-          </ul>
+          <div class="center-vert">
+            <img id="book-img" src="../img/books/123456789.jpg" class="book-img-box" alt="">
+            <ul class="book-info-box"> <br>
+              <li> 
+                  <b> Autor: </b> 
+                  <div id="book-author" class="info-text">J. K. Rowling</div>
+              </li>
+              <li> 
+                  <b> ISBN: </b>
+                  <div id="book-isbn" class="info-text">9780747532699</div>
+              </li>
+              <li> 
+                  <b> Género: </b>
+                  <div id="book-genres" class="info-text">Fantasia/Aventura</div>
+              </li>
+              <li> 
+                  <b> Ano: </b>
+                  <div id="book-year" class="info-text">1997</div>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="col-6">
           <div class="synopsis-box">
             <h2 class="synopsis-title">Sinopse</h2> 
-            <div> 
+            <div id="book-synopsis"> 
               Órfão de pai e mãe, o pequeno Harry - o rapazinho de óculos 
               cujas aventuras livrescas conseguiram encantar miúdos e graúdos 
               em todo o mundo - vive com os tios "muggles", terrivelmente 
@@ -124,57 +126,35 @@
 
       <div class="row-person-share">
         <h2 class="text-uppercase text-center text-secondary">Pessoas para partilhar</h2>
-        <div class="row message">
-          <div class="col-sm-1 message-img-wrapper">
-            <img src="../img/placeholder-user.png" class="message-img">
+        <hr class="star-dark mb-5 text-center star-center-lg">
+        <ul id="sharing-list">
+          <div id="no-content-sharing" class="no-content">
+            Não existem livros disponíveis para troca de momento.
           </div>
-          <div>
-            <div class="person-name">Pessoa 1</div>
-            <div class="person-text">Encontra-se a 7km de si.</div>
-          </div>
-        </div>
-        <div class="row message">
-            <div class="col-sm-1 message-img-wrapper">
-              <img src="../img/placeholder-user.png" class="message-img">
-            </div>
-            <div>
-              <div class="person-name">Pessoa 2</div>
-              <div class="person-text">Encontra-se a 19km de si.</div>
-            </div>
-        </div>
-        <div class="row message">
-            <div class="col-sm-1 message-img-wrapper">
-              <img src="../img/placeholder-user.png" class="message-img">
-            </div>
-            <div>
-              <div class="person-name">Pessoa 3</div>
-              <div class="person-text">Encontra-se a 54 km de si.</div>
-            </div>
-        </div>
+        </ul>
       </div>
 
       <div class="row-review-share">
         <h2 class="text-uppercase text-center text-secondary">REVIEWS</h2>
-        <div class="row message">
-          <div class="col-sm-1 message-img-wrapper">
-            <img src="../img/placeholder-user.png" class="message-img">
-          </div>
-          <div>
-            <div class="person-name"> Pessoa 1
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
+        <hr class="star-dark mb-5 text-center star-center">
+        <ul id="review-list">
+          <li class="row message mx-auto">
+            <img src="../img/placeholder-user.png" class="person-img">
+            <div class="person-info">
+              <div class="person-name"> Pessoa 1
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="person-text">ADORO HOGWARTS! HP FAN!!!</div>
             </div>
-            <div class="person-text">ADORO HOGWARTS! HP FAN!!!</div>
-          </div>
-        </div>
-        <div class="row message">
-          <div class="col-sm-1 message-img-wrapper">
-            <img src="../img/placeholder-user.png" class="message-img">
-          </div>
-          <div>
+          </li>
+        </ul>
+        <li class="row message mx-auto">
+          <img src="../img/placeholder-user.png" class="person-img">
+          <div class="person-info">
             <div class="person-name"> Pessoa 2
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
