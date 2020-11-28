@@ -24,6 +24,10 @@ var books = '{ "books" : [' +
     '{"name" : "Mensagem", "author" : "Fernando Pessoa", "year" : 1934, "genre" : ["Poesia"], "isbn" : "878633222", "synopsis": "O título do livro «Mensagem» de quarenta e quatro poemas deriva da expressão latina Mens agitat molem (a mente comanda o corpo), frase retirada da Eneida de Virgílio. O livro está dividido em três partes que representam as três etapas do Império Português: Brasão, Mar Português e O Encoberto."}' +
 ']}';
 
+var reviews = '{ "reviews" : [' +
+    '{"isbn" : "123456789", "reviews": [{"user" : 3, "firstname" : "João", "surname" : "Paulo", "review" : "ADORO HOGWARTS! HP FAN!!!"}] }'+
+']}';
+
 var ecorep = '{ "ecorep" : [' +
     '{ "isbn": "772272548", "author": "J. K. Rowling", "genre" : ["Fantasia"], "qtd" : 3},' +
     '{ "isbn": "878633222", "author": "Fernando Pessoa", "genre" : ["Poesia"], "qtd" : 3},' +
@@ -100,5 +104,6 @@ loadToStorage(catalogConst, JSON.parse(catalog));
 loadToStorage(singleAuthorConst, "");
 loadToStorage(singleGenreConst, "");
 loadToStorage(selectedBookConst, "");
+loadToStorage(reviewsConst, JSON.parse(reviews));
 localStorage.setItem(loggedConst, getFromStorage(usersConst).users[0].id);
 

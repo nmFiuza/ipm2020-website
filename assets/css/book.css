@@ -120,3 +120,123 @@
     font-weight: 600;
     text-align: center;
 }
+
+.add-btn {
+    position: absolute;
+    left: 70%;
+    background-color: #18bc9c;
+    border-color: #18bc9c;
+    border-width: 2px;
+    border-radius: 50rem!important;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.add-btn:hover{
+    transform: scale(1.1);
+    background-color: #16a084;
+}
+
+.add-btn-sign {
+    color:white;
+    font-size: 16px;
+    margin: 10px;
+    font-weight: 600;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.modal-book {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.model-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.model-input{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+    width: 100%;
+    height: 150%;
+}
+
+.add-btn-modal {
+    background-color: #18bc9c;
+    border-color: #18bc9c;
+    border-width: 2px;
+    border-radius: 50rem!important;
+    cursor: pointer;
+    transition: .2s ease;
+    width: 40%;
+    border-width: 2px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-radius: 50rem!important;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.add-btn-modal:hover{
+    transform: scale(1.1);
+    background-color: #16a084;
+}
+
+.star-dark-modal {
+    border-color: #2c3e50;
+    max-width: 15rem;
+    padding: 0;
+    text-align: center;
+    border: none;
+    border-top: .25rem solid;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.star-dark-modal:after {
+    color: #2c3e50;
+    background-color: #fff;
+    position: relative;
+    top: -.8em;
+    display: inline-block;
+    padding: 0 .25em;
+    content: "\f005";
+    font-family: FontAwesome;
+    font-size: 2em;
+}

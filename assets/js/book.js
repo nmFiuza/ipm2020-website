@@ -65,3 +65,84 @@ for(person of sharingPeople) {
     li.appendChild(div);
     sharingList.appendChild(li);
 }
+
+var reviewsJSON = getFromStorage(reviewsConst);
+var canReview = true;
+for(review of reviewsJSON.reviews) {
+    if(review.isbn == book.isbn) {
+        if(review.reviews.some(rv => rv.user == logged.id))
+            canReview = false;
+    }
+}
+var reviewModal = document.getElementById("review-modal");
+var reviewBtn = document.getElementById("review-btn");
+var reviewClose = document.getElementById("review-close");
+
+reviewBtn.onclick = function() {
+    console.log(canReview);
+    if(!canReview)
+        window.alert("Máximo de 1 review por pessoa.")
+    else
+        reviewModal.style.display = "block";
+}
+
+reviewClose.onclick = function() {
+    reviewModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == reviewModal) {
+        reviewModal.style.display = "none";
+    }
+}
+
+var reviewList = document.getElementById("review-list")
+for(review of reviewsJSON.reviews) {
+    if(review.isbn == book.isbn) {
+        reviewList.removeChild(document.getElementById("no-content-reviews"));
+        for(r of review.reviews) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "row message mx-auto");
+            var img = document.createElement("img");
+            img.setAttribute("class", "person-img");
+            img.setAttribute("src", "../img/placeholder-user.png"); 
+            var div = document.createElement("div");
+            div.setAttribute("class", "person-info");    
+            var username = document.createElement("div");
+            username.setAttribute("class", "person-name");
+            username.innerHTML = r.firstname + " " + r.surname;  
+            var text = document.createElement("div");
+            text.setAttribute("class", "person-text"); 
+            text.innerHTML = r.review;
+            div.appendChild(username);
+            div.appendChild(text);
+            li.appendChild(img);
+            li.appendChild(div);
+            reviewList.appendChild(li);
+        } 
+    }
+}
+
+var reviewBtnAdd = document.getElementById("review-btn-add");
+reviewBtnAdd.onclick = function(){
+    var text = document.getElementById("review-text").value;
+    if(text == "")
+        window.alert("Texto da review vazio. Por favor preencha o campo de texto antes de submeter.")
+    else {
+        const newReview = {user: logged.id, firstname: logged.firstname, surname: logged.surname, review: text};
+        var found = false;
+        for(var review of reviewsJSON.reviews) {
+            if(review.isbn == book.isbn) {
+                review.reviews.push(newReview);
+                found = true
+            }
+        }
+        if(!found){
+            var newBook = {isbn : book.isbn, reviews : [ newReview ]}
+            reviewsJSON.reviews.push(newBook);
+        }
+
+        loadToStorage(reviewsConst, reviewsJSON);
+        window.location.reload();
+    }
+}

@@ -9,6 +9,7 @@ const loggedConst = "logged";
 const singleAuthorConst = "author";
 const singleGenreConst = "genre";
 const selectedBookConst = "selectedBook";
+const reviewsConst = "reviews";
 const donationWorth = 100;
 
 /**
