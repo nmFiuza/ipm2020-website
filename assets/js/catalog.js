@@ -11,6 +11,9 @@ var dropdown_isbn = document.getElementById("dropdown_isbn");
 var logged = getLogged();
 var myAvailableISBN = [];
 var myAvailableBooks = getUserBooks(logged.id)[1];
+var myWishlistBooks = getUserBooks(logged.id)[0];
+console.log(myAvailableBooks);
+console.log(myWishlistBooks);
 for (var j of myAvailableBooks) {
     myAvailableISBN.push(j.isbn);
 }
@@ -116,7 +119,18 @@ function loadList() {
         div2.setAttribute("class", "widget-26-book-title");
         var a = document.createElement("a");
         a.innerHTML = title;
-        a.setAttribute("href", 'book.html?id=' + book.isbn);
+        
+        var hasBookAvailable = myAvailableBooks.some(bk => bk.isbn == isbn);
+        var hasBookWishlist = myWishlistBooks.some(bk => bk.isbn == isbn);
+        var enabled;
+        if(!hasBookAvailable && !hasBookWishlist)
+            enabled = 3;
+        else if(hasBookAvailable)
+            enabled = 1;
+        else if(hasBookWishlist)
+            enabled = 2;
+
+        a.setAttribute("href", 'book.html?id=' + book.isbn + "&enabled=" + enabled);
         var p1 = document.createElement("p");
         p1.setAttribute("style", "font-size: 12px;")
         p1.innerHTML = author;

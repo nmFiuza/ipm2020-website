@@ -84,6 +84,8 @@ function askToAddToLibrary() {
         for (var user of usersJSON.users)
             if (user.id == logged.id) {
                 user.available.push(randomizedBook);
+                if(user.wishlist.includes(randomizedBook))
+                    user.wishlist.splice(user.wishlist.indexOf(randomizedBook),1);
                 break;
             }
         var bookExisted = false;
