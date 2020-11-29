@@ -83,6 +83,15 @@
     transition: .2s ease;
 }
 
+.compatible-li{
+    transition: .2s ease;
+}
+
+.compatible-li:hover{
+    background-color: #077962;
+    cursor: pointer;
+}
+
 .person-img {
     width: 75px;
     height: 75px;
@@ -315,4 +324,26 @@
     padding-right: 40px;
     padding-bottom: 20px;
     text-align: justify;
+}
+
+.trade-row{
+    transition: .2s ease;
+}
+
+.trade-row:hover{
+    background-color: #18bc9c;
+    cursor: pointer;
+}
+
+.trade-arrows{
+    text-align: center;
+}
+
+.trade-arrows img{
+    width: 60%;
+}
+
+.trade-img img{
+    height: 150px!important;
+    margin: 25%;
 }
