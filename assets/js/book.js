@@ -1,7 +1,7 @@
 var logged = getLogged();
 var qs = new URLSearchParams(window.location.search);
 const isbn = qs.get('id');
-var imageBooks = ["123456789", "987654321", "512278208", "591171946", "709026838", "309998648", "200738799", "681860960", "286061548", "772272548", "934683429", "666532112", "534321113", "878633222"];
+const enabled = qs.get('enabled');
 
 var books = getFromStorage(booksConst);
 var book;
@@ -44,6 +44,7 @@ var sharingList = document.getElementById("sharing-list")
 if(sharingPeople.length > 0)
     sharingList.removeChild(document.getElementById("no-content-sharing"));
 
+    console.log(sharingPeople);
 for(person of sharingPeople) {
     var li = document.createElement("li");
     li.setAttribute("class", "row message mx-auto");
@@ -94,12 +95,12 @@ for(review of reviewsJSON.reviews) {
             canReview = false;
     }
 }
+
 var reviewModal = document.getElementById("review-modal");
 var reviewBtn = document.getElementById("review-btn");
 var reviewClose = document.getElementById("review-close");
 
 reviewBtn.onclick = function() {
-    console.log(canReview);
     if(!canReview)
         window.alert("Máximo de 1 review por pessoa.")
     else
@@ -167,6 +168,9 @@ reviewBtnAdd.onclick = function(){
 }
 
 var wishlistBtn = document.getElementById("wishlist-btn");
+if(enabled == 1 || enabled == 2) {
+    wishlistBtn.style.display = "none";
+}
 wishlistBtn.onclick = function() {
     var u = getFromStorage(usersConst);
     for(var user of u.users) {
@@ -176,4 +180,13 @@ wishlistBtn.onclick = function() {
             window.location.replace("../html/profile.html#lista-desejos");
         }
     }
+}
+
+var peopleSharing = document.getElementById("people-sharing");
+if(enabled == 1) {
+    peopleSharing.style.display = "none";
+}
+
+if(enabled == 2 || enabled == 3) {
+    reviewBtn.style.display = "none";
 }

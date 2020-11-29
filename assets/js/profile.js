@@ -35,7 +35,7 @@ if(userBooks[1].length > 0)
     
         var title = document.createElement("a");
         title.setAttribute("class", "book-name");
-        title.setAttribute("href", 'book.html?id=' + book.isbn);
+        title.setAttribute("href", 'book.html?id=' + book.isbn + "&enabled=1");
         title.innerHTML = book.name;
     
         var info = document.createElement("div");
@@ -94,7 +94,7 @@ for(var book of userBooks[0]){
 
     var title = document.createElement("a");
     title.setAttribute("class", "book-name");
-    title.setAttribute("href", 'book.html?id=' + book.isbn);
+    title.setAttribute("href", 'book.html?id=' + book.isbn + "&enabled=2");
     title.innerHTML = book.name;
 
     var info = document.createElement("div");
