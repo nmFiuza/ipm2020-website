@@ -117,6 +117,7 @@ function loadList() {
         a.innerHTML = title;
         a.setAttribute("href", 'book.html?id=' + book.isbn);
         var p1 = document.createElement("p");
+        p1.setAttribute("style", "font-size: 12px;")
         p1.innerHTML = author;
         div2.appendChild(a);
         div2.appendChild(p1);

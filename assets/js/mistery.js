@@ -29,12 +29,8 @@ function midOption(){
 
 function expensiveOption(){
     if(userPoints<expensiveOptionConst){
-        window.alert("Pontos insuficientes, necessita mais " + (expensiveOptionConst-userPoints) + " pontos");
+        window.alert("Não implementado..");
         return;
-    }
-    if(confirm("Tem a certeza que pretende gastar " + expensiveOptionConst + " pontos?")){
-        removePointsFromUser(expensiveOptionConst);
-        window.location.href = "random_mistery.html";
     }
 }
 

@@ -34,7 +34,8 @@ for(var book of userBooks[1]){
     //Image
     var img = document.createElement("img");
     img.setAttribute("class", "donate-li-img");
-    var bookImgPath="../img/books/" + bookISBN + ".jpg";
+
+    var bookImgPath= imageBooks.includes(bookISBN) ? "../img/books/" + bookISBN + ".jpg" : "../img/books/default-book.jpg";
     img.setAttribute("src", bookImgPath);
     //Informative text
     var subdiv = document.createElement("div");
