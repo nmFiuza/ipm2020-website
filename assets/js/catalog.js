@@ -106,6 +106,7 @@ function loadList() {
         div1.setAttribute("class", "widget-26-book-img");
         var img = document.createElement("img");
         img.setAttribute("src", "../img/books/" + isbn + ".jpg");
+        img.setAttribute("style", "object-fit: cover;");
         div1.appendChild(img);
         td1.appendChild(div1);
         //Book name and author
