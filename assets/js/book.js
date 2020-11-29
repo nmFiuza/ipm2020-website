@@ -46,7 +46,7 @@ if(sharingPeople.length > 0)
 
 for(person of sharingPeople) {
     var li = document.createElement("li");
-    li.setAttribute("class", "row message mx-auto");
+    li.setAttribute("id", person.user.id);
     var img = document.createElement("img");
     img.setAttribute("class", "person-img");
     img.setAttribute("src", "../img/users/" + person.user.id + ".jpg");    
@@ -68,11 +68,16 @@ for(person of sharingPeople) {
         i.setAttribute("class", "indicator bg-success");
         span2.setAttribute("class", "text-green");
         span2.innerHTML = "Compatível";
+        li.addEventListener("click", function(){
+            showTradeModal(this);
+        });
+        li.setAttribute("class", "row message mx-auto compatible-li");
     } else {
         div5.setAttribute("class", "widget-26-availability bg-soft-danger");
         i.setAttribute("class", "indicator bg-danger");
         span2.setAttribute("class", "text-red");
         span2.innerHTML = "Incompatível";
+        li.setAttribute("class", "row message mx-auto");
     }
 
     div5.appendChild(i);
@@ -176,4 +181,114 @@ wishlistBtn.onclick = function() {
             window.location.replace("../html/profile.html#lista-desejos");
         }
     }
+}
+
+var tradeModal = document.getElementById("book_trade");
+var tradeClose = document.getElementById("trade_close");
+var tradeDiv = document.getElementById("trade_div");
+
+function showTradeModal(elem){
+    var personID = elem.id;
+    for(var person of sharingPeople){
+        if(person.user.id == personID){
+            for(var isbn of person.trades){
+                createBookTradeDiv(isbn);
+            }
+            break;
+        }
+    }
+    tradeModal.style.display = "block";
+}
+
+function createBookTradeDiv(isbn){
+    tradeDiv.innerHTML = "";
+    //My book for trading
+    var td1 = document.createElement("td");
+    td1.setAttribute("style", "margin-left: 0px; width: 30%;")
+    var div1 = document.createElement("div");
+    div1.setAttribute("class", "trade-img");
+    var img = document.createElement("img");
+    img.setAttribute("src", "../img/books/" + isbn + ".jpg");
+    img.setAttribute("style", "object-fit: cover; float: left;");
+    div1.appendChild(img);
+    td1.appendChild(div1);
+    //Trade arrows image
+    var td2 = document.createElement("td");
+    td2.setAttribute("style", "margin-left: 0px; width: 30%;")
+    var div2 = document.createElement("div");
+    div2.setAttribute("class", "trade-arrows");
+    var img2 = document.createElement("img");
+    img2.setAttribute("src", "../img/transfer-arrows.jpg");
+    img2.setAttribute("style", "object-fit: cover;");
+    div2.appendChild(img2);
+    td2.appendChild(div2);
+    //Trader's book for trading
+    var td3 = document.createElement("td");
+    td3.setAttribute("style", "margin-left: 0px; width: 30%;")
+    var div3 = document.createElement("div");
+    div3.setAttribute("class", "trade-img");
+    var img3 = document.createElement("img");
+    img3.setAttribute("src", "../img/books/" + book.isbn + ".jpg");
+    img3.setAttribute("style", "object-fit: cover; float: right;");
+    div3.appendChild(img3);
+    td3.appendChild(div3);
+    var tr = document.createElement("tr");
+    tr.setAttribute("class", "trade-row");
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.addEventListener("click", function(){
+        tradeCompletion(this);
+    })
+    tradeDiv.appendChild(tr);
+}
+
+window.onclick = function(event) {
+    if (event.target == tradeModal || event.target == tradeCompletionModal) {
+        tradeModal.style.display = "none";
+        tradeCompletionModal.style.display = "none";
+    }
+}
+
+tradeClose.onclick = function() {
+    tradeModal.style.display = "none";
+}
+
+var tradeCompletionModal = document.getElementById("trade_completion");
+var tradeCompletionClose = document.getElementById("trade_completion_close");
+var tradeContainer = document.getElementById("trade-container");
+
+tradeCompletionClose.onclick = function() {
+    tradeCompletionModal.style.display = "none";
+}
+
+function tradeCompletion(tr){
+    //Trade chosen schematic
+    tradeContainer.innerHTML = "";
+    var tradeTable = document.createElement("table");
+    var tbody = document.createElement("tbody");
+    tbody.innerHTML = tr.innerHTML;
+    tradeTable.appendChild(tbody);
+    tradeModal.style.display = "none";
+    tradeCompletionModal.style.display = "block";
+    //Trade area
+    var text_area = document.createElement("textarea");
+    text_area.setAttribute("id", "trade_message");
+    text_area.setAttribute("rows", "5");
+    text_area.setAttribute("class", "model-input");
+    text_area.setAttribute("placeholder", "Escreva aqui a sua mensagem");
+    text_area.setAttribute("style", "width: 100%");
+    text_area.innerHTML = "Olá estou interessado nesta troca.\n\nAceitas?"
+    //Button
+    var buttonDiv = document.createElement("div");
+    buttonDiv.setAttribute("id", "submit-trade");
+    buttonDiv.setAttribute("class", "add-btn-modal");
+    var buttonElem = document.createElement("div");
+    buttonElem.setAttribute("class", "add-btn-sign");
+    buttonElem.innerHTML = "Enviar Pedido";
+    buttonDiv.appendChild(buttonElem);
+    //---
+    tradeContainer.appendChild(tradeTable);
+    tradeContainer.appendChild(text_area);
+    tradeContainer.appendChild(buttonDiv);
 }
