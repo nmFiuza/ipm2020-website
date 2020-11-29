@@ -59,10 +59,30 @@ for(person of sharingPeople) {
     text.setAttribute("class", "person-text");
     const num = person.user.id*3+5*(person.user.id-1)
     text.innerHTML = "Encontra-se a " + num + " km de si.";
+    
+    var div5 = document.createElement("div");
+    var i = document.createElement("i");
+    var span2 = document.createElement("span");
+    if(person.trades.length > 0) {
+        div5.setAttribute("class", "widget-26-availability bg-soft-success");
+        i.setAttribute("class", "indicator bg-success");
+        span2.setAttribute("class", "text-green");
+        span2.innerHTML = "Compatível";
+    } else {
+        div5.setAttribute("class", "widget-26-availability bg-soft-danger");
+        i.setAttribute("class", "indicator bg-danger");
+        span2.setAttribute("class", "text-red");
+        span2.innerHTML = "Incompatível";
+    }
+
+    div5.appendChild(i);
+    div5.appendChild(span2);
+
     div.appendChild(username);
     div.appendChild(text);
     li.appendChild(img);
     li.appendChild(div);
+    li.appendChild(div5)
     sharingList.appendChild(li);
 }
 
@@ -103,21 +123,21 @@ for(review of reviewsJSON.reviews) {
         for(r of review.reviews) {
             var li = document.createElement("li");
             li.setAttribute("class", "row message mx-auto");
-            var img = document.createElement("img");
-            img.setAttribute("class", "person-img");
-            img.setAttribute("src", "../img/placeholder-user.png"); 
             var div = document.createElement("div");
-            div.setAttribute("class", "person-info");    
+            div.setAttribute("class", "row");
+            var img = document.createElement("img");
+            img.setAttribute("class", "review-img");
+            img.setAttribute("src", "../img/placeholder-user.png");     
             var username = document.createElement("div");
-            username.setAttribute("class", "person-name");
+            username.setAttribute("class", "review-name");
             username.innerHTML = r.firstname + " " + r.surname;  
             var text = document.createElement("div");
-            text.setAttribute("class", "person-text"); 
+            text.setAttribute("class", "review-text"); 
             text.innerHTML = r.review;
+            div.appendChild(img);
             div.appendChild(username);
-            div.appendChild(text);
-            li.appendChild(img);
             li.appendChild(div);
+            li.appendChild(text);
             reviewList.appendChild(li);
         } 
     }
@@ -141,8 +161,19 @@ reviewBtnAdd.onclick = function(){
             var newBook = {isbn : book.isbn, reviews : [ newReview ]}
             reviewsJSON.reviews.push(newBook);
         }
-
         loadToStorage(reviewsConst, reviewsJSON);
         window.location.reload();
+    }
+}
+
+var wishlistBtn = document.getElementById("wishlist-btn");
+wishlistBtn.onclick = function() {
+    var u = getFromStorage(usersConst);
+    for(var user of u.users) {
+        if(user.id == logged.id) {
+            user.wishlist.push(isbn)
+            loadToStorage(usersConst, u);
+            window.location.replace("../html/profile.html#lista-desejos");
+        }
     }
 }

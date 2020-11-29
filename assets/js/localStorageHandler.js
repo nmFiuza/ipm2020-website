@@ -1,7 +1,6 @@
 
 const usersConst = "users";
 const booksConst = "books";
-const authorsConst = "authors";
 const genresConst = "genres";
 const catalogConst = "catalog";
 const ecorepConst = "ecorep";

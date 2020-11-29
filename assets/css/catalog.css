@@ -97,6 +97,7 @@ body {
   width: 13px;
   height: 13px;
   margin-right: .5rem;
+  margin-top: .3rem;
   float: left;
   border-radius: 50%;
 }

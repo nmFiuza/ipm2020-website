@@ -194,12 +194,6 @@ shareBtnAdd.onclick = function(){
                 else{
                     user.available.push(isbn)
                     loadToStorage(usersConst, u);
-
-                    var a = getFromStorage(authorsConst);
-                    if(!a.authors.includes(author)){
-                        a.authors.push(author);
-                        loadToStorage(authorsConst, a);
-                    }
                 
                     var b = getFromStorage(booksConst);
                     if(b.books.filter(bk => bk.isbn == isbn).length === 0){

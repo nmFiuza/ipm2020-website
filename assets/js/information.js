@@ -52,18 +52,6 @@ var catalog = '{ "catalog" : [' +
     '{ "isbn": "934683429", "ids": [5] }' +
 ']}';
 
-var authors = '{"authors" : [' +
-    '"J. K. Rowling",' +
-    '"Luís Sepúlveda",' +
-    '"Thomas Hardy",' +
-    '"Stieg Larsson",' +
-    '"Rick Riordan",' +
-    '"Don Norman",' +
-    '"Herman Melville",' +
-    '"Ernest Hemingway",' +
-    '"Aldous Huxley"' +
-']}';
-
 var genres = '{ "genres" : [' +
     '"Alegoria",' +
     '"Aventura",' +
@@ -97,7 +85,6 @@ var genres = '{ "genres" : [' +
 //local storage only accepts string variables
 loadToStorage(booksConst, JSON.parse(books));
 loadToStorage(usersConst, JSON.parse(users));
-loadToStorage(authorsConst, JSON.parse(authors));
 loadToStorage(genresConst, JSON.parse(genres));
 loadToStorage(ecorepConst, JSON.parse(ecorep));
 loadToStorage(catalogConst, JSON.parse(catalog));
