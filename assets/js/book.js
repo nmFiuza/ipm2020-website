@@ -49,7 +49,7 @@ for(person of sharingPeople) {
     li.setAttribute("class", "row message mx-auto");
     var img = document.createElement("img");
     img.setAttribute("class", "person-img");
-    img.setAttribute("src", "../img/placeholder-user.png");    
+    img.setAttribute("src", "../img/users/" + person.user.id + ".jpg");    
     var div = document.createElement("div");
     div.setAttribute("class", "person-info");    
     var username = document.createElement("div");
@@ -127,7 +127,7 @@ for(review of reviewsJSON.reviews) {
             div.setAttribute("class", "row");
             var img = document.createElement("img");
             img.setAttribute("class", "review-img");
-            img.setAttribute("src", "../img/placeholder-user.png");     
+            img.setAttribute("src", "../img/users/" + r.user + ".jpg");    
             var username = document.createElement("div");
             username.setAttribute("class", "review-name");
             username.innerHTML = r.firstname + " " + r.surname;  

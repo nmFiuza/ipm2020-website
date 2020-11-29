@@ -9,6 +9,8 @@ var userBooks = getUserBooks(logged.id);
 var sharelist = document.getElementById("share-list");
 var wishlist = document.getElementById("wish-list");
 
+document.getElementById("profile_pic").setAttribute("src", "../img/users/" + logged.id + ".jpg")
+
 if(userBooks[0].length > 0)
     wishlist.removeChild(document.getElementById("no-content-wishlist"));
 

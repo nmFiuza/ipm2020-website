@@ -84,12 +84,14 @@
 }
 
 .person-img {
-    width: 10%;
+    width: 75px;
+    height: 75px;
     vertical-align: middle;
     margin-left: 8%;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .person-info {
