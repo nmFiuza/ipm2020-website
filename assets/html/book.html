@@ -124,11 +124,12 @@
 
       <div class="row-person-share">
         <h2 class="text-uppercase text-center text-secondary">Pessoas para partilhar</h2>
+       
         <div class="row message">
           <div class="col-sm-1 message-img-wrapper">
             <img src="../img/placeholder-user.png" class="message-img">
           </div>
-          <div>
+          <div id="person-btn" class="person-btn">
             <div class="person-name">Pessoa 1</div>
             <div class="person-text">Encontra-se a 7km de si.</div>
           </div>
@@ -187,6 +188,46 @@
         </div>
       </div>
     </div>
+
+
+    <div id="person-modal" class="modal-person">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+              <button id="person-close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="container text-center">
+                  <div class="col-lg-12 mx-auto">
+                    <h2 class="text-uppercase text-secondary mb-0">Pedido de Troca</h2>
+                    <hr class="star-dark mb-5 star-center-lg">
+                    <div class="row" style="padding-top: 15px;">
+                      <div class="col-6">
+                       <img src="../img/books/123456789.jpg" class="book-img-box-modal" alt="">
+                     </div>
+                     <div class="col-6">
+                       <img src="../img/books/default-book.jpg" class="book-img-box-modal" alt="">
+                     </div>
+                    </div>
+                    <div class="chat-box-modal">
+                      <div> 
+                        Olá Pessoa 1! Estás interessada neste troca?
+                      </div>
+                    </div>
+                    <div id="person-btn-add" class="person-btn-modal" >
+                      <div class="person-btn-sign">Finalizar</div>
+                    </div>   
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Scripts used -->
     <script src="../js/jquery-3.5.1.min.js"></script>

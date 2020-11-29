@@ -8,6 +8,27 @@ for(b of books.books){
         book = b
 }
 
+var personModal = document.getElementById("person-modal");
+var personBtn = document.getElementById("person-btn");
+var personClose = document.getElementById("person-close");
+
+personBtn.onclick = function() {
+    personModal.style.display = "block";
+}
+
+personClose.onclick = function() {
+    personModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == personModal) {
+        personModal.style.display = "none";
+    }
+}
+
+var personBtnAdd = document.getElementById("person-btn-add");
+
+
 document.getElementById("book-isbn").innerHTML = book.isbn;
 document.getElementById("book-title").innerHTML = book.name;
 document.getElementById("book-author").innerHTML = book.author;
