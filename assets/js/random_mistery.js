@@ -20,7 +20,7 @@ if(selectedBook){
     books = books.filter(b => b.author == chosenAuthor);
     numIter = Math.floor(Math.random() * books.length * 2) + 10;
 } else if (chosenGenre){
-    books = books.filter(b => b.genre[0].includes(chosenGenre));
+    books = books.filter(b => b.genre.includes(chosenGenre));
     numIter = Math.floor(Math.random() * books.length * 2) + 10;
 }
 
@@ -41,7 +41,7 @@ function displayNextImage() {
         }
         document.getElementById("confirm_mystery").setAttribute("style", "margin: 50px;");
         console.log(randomizedBook);
-        loadToStorage(selectedBookConst, randomizedBook.toString());
+        loadToStorage(selectedBookConst, randomizedBook);
         return;
     }
     randomizedBook = books[counter % (books.length)].isbn

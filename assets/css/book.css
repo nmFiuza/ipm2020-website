@@ -350,3 +350,27 @@
     height: 150px!important;
     margin: 25%;
 }
+
+.continue-button {
+    background-color: #18bc9c;
+    border-radius: 50rem!important;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 300px;
+    margin: 40px;
+    transition: .5s ease;
+}
+.continue-button:focus{
+    outline:none!important;
+}
+
+.continue-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

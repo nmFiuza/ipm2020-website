@@ -207,9 +207,15 @@ if(enabled == 2 || enabled == 3) {
     reviewBtn.style.display = "none";
 }
 
+//Show the trade modal
+
 var tradeModal = document.getElementById("book_trade");
 var tradeClose = document.getElementById("trade_close");
 var tradeDiv = document.getElementById("trade_div");
+
+tradeClose.onclick = function() {
+    tradeModal.style.display = "none";
+}
 
 function showTradeModal(elem){
     var personID = elem.id;
@@ -267,16 +273,7 @@ function createBookTradeDiv(isbn){
     tradeDiv.appendChild(tr);
 }
 
-window.onclick = function(event) {
-    if (event.target == tradeModal || event.target == tradeCompletionModal) {
-        tradeModal.style.display = "none";
-        tradeCompletionModal.style.display = "none";
-    }
-}
-
-tradeClose.onclick = function() {
-    tradeModal.style.display = "none";
-}
+//Trade completion phase
 
 var tradeCompletionModal = document.getElementById("trade_completion");
 var tradeCompletionClose = document.getElementById("trade_completion_close");
@@ -320,9 +317,34 @@ function tradeCompletion(tr){
     tradeContainer.appendChild(buttonDiv);
 }
 
-var tradeAcceptedModal = document.getElementById("book_trade");
-var tradeAcceptedClose = document.getElementById("trade_close");
+//Trade sent phase
 
-function tradeAccepted(tr){
+var tradeAcceptedModal = document.getElementById("trade_accepted");
+var tradeAcceptedClose = document.getElementById("trade_accepted_close");
+var tradeContainer = document.getElementById("trade-container");
+
+
+tradeAcceptedClose.onclick = function(){
+    tradeAcceptedModal.style.display = "none";
+}
+
+function tradeAccepted(){
     tradeContainer.innerHTML = "";
+    tradeCompletionModal.style.display = "none";
+    tradeAcceptedModal.style.display = "block";
+}
+
+//Close modals
+
+window.onclick = function(event) {
+    if (event.target == tradeModal || event.target == tradeCompletionModal || event.target == tradeAcceptedModal) {
+        tradeModal.style.display = "none";
+        tradeCompletionModal.style.display = "none";
+        tradeAcceptedModal.style.display = "none";
+    }
+}
+
+function goBackModal(){
+    tradeCompletionModal.style.display = "none";
+    tradeModal.style.display = "block";
 }
