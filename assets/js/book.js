@@ -299,7 +299,7 @@ function tradeCompletion(tr){
     text_area.setAttribute("class", "model-input");
     text_area.setAttribute("placeholder", "Escreva aqui a sua mensagem");
     text_area.setAttribute("style", "width: 100%");
-    text_area.innerHTML = "Olá estou interessado nesta troca.\n\nAceitas?"
+    text_area.innerHTML = "Olá estou interessado nesta troca.\n\nAceitaria este livro?"
     //Button
     var buttonDiv = document.createElement("div");
     buttonDiv.setAttribute("id", "submit-trade");
