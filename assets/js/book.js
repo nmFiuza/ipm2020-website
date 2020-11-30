@@ -329,7 +329,6 @@ tradeAcceptedClose.onclick = function(){
 }
 
 function tradeAccepted(){
-    tradeContainer.innerHTML = "";
     tradeCompletionModal.style.display = "none";
     tradeAcceptedModal.style.display = "block";
 }
