@@ -300,8 +300,18 @@ function tradeCompletion(tr){
     buttonElem.setAttribute("class", "add-btn-sign");
     buttonElem.innerHTML = "Enviar Pedido";
     buttonDiv.appendChild(buttonElem);
+    buttonDiv.addEventListener("click", function(){
+        tradeAccepted(this);
+    })
     //---
     tradeContainer.appendChild(tradeTable);
     tradeContainer.appendChild(text_area);
     tradeContainer.appendChild(buttonDiv);
+}
+
+var tradeAcceptedModal = document.getElementById("book_trade");
+var tradeAcceptedClose = document.getElementById("trade_close");
+
+function tradeAccepted(tr){
+    tradeContainer.innerHTML = "";
 }

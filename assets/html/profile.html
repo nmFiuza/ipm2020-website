@@ -212,26 +212,28 @@
                   <h2 class="text-uppercase text-secondary mb-0">Adicionar livro para partilha</h2>
                   <hr class="star-dark mb-5 star-center-lg">
                   <div class="col-lg-10 mx-auto">
-                    <div class="model-info">
-                      <span class="model-label" style="margin-right: 51px;">ISBN:</span>
-                      <input id="share-isbn" type="text" class="model-input" placeholder="Insira o nº isbn"></input>
-                    </div><div class="model-info">
-                      <span class="model-label" style="margin-right: 22px;">TÍTULO:</span>
-                      <input id="share-title" type="text" class="model-input" placeholder="Insira o título"></input>
-                    </div><div class="model-info">
-                      <span class="model-label" style="margin-right: 23px;">AUTOR:</span>
-                      <input id="share-author" type="text" class="model-input" placeholder="Insira o nome do autor"></input>
-                    </div>
-                    <div class="model-info">
-                      <span class="model-label" style="margin-right: 53px;">ANO:</span>
-                      <input id="share-year" type="number" class="model-input" placeholder="Insira o ano de lançamento"></input>
-                    </div> 
-                    <div class="model-info">
-                      <span class="model-label" style="margin-right: 5px;">GÉNERO:</span>
-                      <select id="share-genres" class="model-select">
-                        <option value="">--selecione o género do livro--</option>
-                      </select>
-                    </div>                 
+                    <form action="">
+                      <div class="model-info">
+                        <span class="model-label" style="margin-right: 51px;">ISBN:</span>
+                        <input id="share-isbn" type="text" class="model-input" placeholder="Insira o nº isbn" required></input>
+                      </div><div class="model-info">
+                        <span class="model-label" style="margin-right: 22px;">TÍTULO:</span>
+                        <input id="share-title" type="text" class="model-input" placeholder="Insira o título" required></input>
+                      </div><div class="model-info">
+                        <span class="model-label" style="margin-right: 23px;">AUTOR:</span>
+                        <input id="share-author" type="text" class="model-input" placeholder="Insira o nome do autor" required></input>
+                      </div>
+                      <div class="model-info">
+                        <span class="model-label" style="margin-right: 53px;">ANO:</span>
+                        <input id="share-year" type="number" class="model-input" placeholder="Insira o ano de lançamento" required></input>
+                      </div> 
+                      <div class="model-info">
+                        <span class="model-label" style="margin-right: 5px;">GÉNERO:</span>
+                        <select id="share-genres" class="model-select" required>
+                          <option value="">--selecione o género do livro--</option>
+                        </select>
+                      </div>
+                    </form>                                     
                   </div>
                   <div id="share-btn-add" class="add-btn-modal" >
                     <div class="add-btn-sign">+ Adicionar Livro</div>
