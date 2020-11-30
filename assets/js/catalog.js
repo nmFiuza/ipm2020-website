@@ -186,6 +186,9 @@ function loadList() {
             i.setAttribute("class", "indicator bg-danger");
             span2.innerHTML = "Incompatível";
         }
+        if(hasBookAvailable){
+            div5.setAttribute("style", "display: none;");
+        }
         div5.appendChild(i);
         div5.appendChild(span2);
         td5.appendChild(div5);
