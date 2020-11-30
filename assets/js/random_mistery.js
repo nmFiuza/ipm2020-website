@@ -44,8 +44,13 @@ function displayNextImage() {
         loadToStorage(selectedBookConst, randomizedBook);
         return;
     }
-    randomizedBook = books[counter % (books.length)].isbn
-    randimg.src = "../img/books/" + randomizedBook + ".jpg";
+    randomizedBook = books[counter % (books.length)].isbn;
+    if(imageBooks.includes(randomizedBook)){
+        randimg.src = "../img/books/" + randomizedBook + ".jpg";
+    } else {
+        randimg.src = "../img/books/default-book.jpg";
+    }
+    
 }
 var imgRandTime = setInterval(displayNextImage, 30);
 
