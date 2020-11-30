@@ -10,7 +10,7 @@ const singleGenreConst = "genre";
 const selectedBookConst = "selectedBook";
 const reviewsConst = "reviews";
 const donationWorth = 100;
-var imageBooks = ["123456789", "987654321", "512278208", "591171946", "709026838", "309998648", "200738799", "681860960", "286061548", "772272548", "934683429", "666532112", "534321113", "878633222"];
+var imageBooks = ["123456789", "987654321", "512278208", "591171946", "709026838", "309998648", "200738799", "681860960", "286061548", "772272548", "934683429", "666532112", "534321113", "878633222", "319026765"];
 
 /**
  * Gets the content of the entry stored in browser local storage
