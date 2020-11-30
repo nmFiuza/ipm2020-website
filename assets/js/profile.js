@@ -21,7 +21,7 @@ if(userBooks[1].length > 0)
         var li = document.createElement("li");
         li.setAttribute("id", book.isbn);
         li.setAttribute("class", "book");
-        
+        //Image
         var img = document.createElement("img");
         img.setAttribute("class", "book-img");
         if (!imageBooks.includes(book.isbn)) {
@@ -29,7 +29,7 @@ if(userBooks[1].length > 0)
         } else {
             img.setAttribute("src", "../img/books/" + book.isbn + ".jpg");
         }
-    
+        //Book info
         var div = document.createElement("div");
         div.setAttribute("class", "book-info");
     
@@ -44,7 +44,7 @@ if(userBooks[1].length > 0)
     
         div.appendChild(title);
         div.appendChild(info);
-    
+        //trash can
         var icon = document.createElement("i");
         icon.setAttribute("id", "trash-" + book.isbn);
         icon.setAttribute("class", "fas fa-trash trash-book");
@@ -69,10 +69,26 @@ if(userBooks[1].length > 0)
             loadToStorage(usersConst, usersJSON);
             window.location.reload();
         })
-    
-        li.appendChild(img);
-        li.appendChild(div);
-        li.appendChild(icon);
+        //Setup rows and cols
+        var row = document.createElement("div");
+        row.setAttribute("class", "row align-items-center");
+        row.setAttribute("style", "width: 100%;");
+        var col1 = document.createElement("div");
+        col1.setAttribute("class", "col-sm-2");
+        col1.setAttribute("style", "height: 100%;");
+        var col2 = document.createElement("div");
+        col2.setAttribute("class", "col-sm-8");
+        var col3 = document.createElement("div");
+        col3.setAttribute("class", "col-sm-2");
+        col3.setAttribute("style", "text-align:center");
+        //append everything
+        col1.appendChild(img);
+        col2.appendChild(div);
+        col3.appendChild(icon);
+        row.append(col1);
+        row.append(col2);
+        row.append(col3);
+        li.appendChild(row);
         sharelist.appendChild(li);
     }   
 
@@ -129,9 +145,26 @@ for(var book of userBooks[0]){
         window.location.reload();
     })
 
-    li.appendChild(img);
-    li.appendChild(div);
-    li.appendChild(icon);
+    //Setup rows and cols
+    var row = document.createElement("div");
+    row.setAttribute("class", "row align-items-center");
+    row.setAttribute("style", "width: 100%;");
+    var col1 = document.createElement("div");
+    col1.setAttribute("class", "col-sm-2");
+    col1.setAttribute("style", "height: 100%;");
+    var col2 = document.createElement("div");
+    col2.setAttribute("class", "col-sm-8");
+    var col3 = document.createElement("div");
+    col3.setAttribute("class", "col-sm-2");
+    col3.setAttribute("style", "text-align:center");
+    //append everything
+    col1.appendChild(img);
+    col2.appendChild(div);
+    col3.appendChild(icon);
+    row.append(col1);
+    row.append(col2);
+    row.append(col3);
+    li.appendChild(row);
     wishlist.appendChild(li);
 }
 
