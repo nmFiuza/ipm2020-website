@@ -303,10 +303,12 @@
 }
 
 .review-img {
-    width: 7%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     vertical-align: middle;
     margin-left: 8%;
-    margin-top: 20px;
+    margin: 20px;
     border-radius: 20rem;
     object-fit: cover;
 }
@@ -320,8 +322,8 @@
 }
 
 .review-text {
+    margin-left: 20px;
     margin-top: 10px;
-    padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 20px;
     text-align: justify;

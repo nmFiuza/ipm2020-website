@@ -77,7 +77,7 @@ function confirmOrder() {
     window.location.href = "ecorep.html";
 }
 function askToAddToLibrary() {
-    if (window.confirm("Quer adicionar o livro à sua lista de troca?")) {
+    if (window.confirm("Quer adicionar o livro à sua lista de partilha?")) {
         var usersJSON = getFromStorage(usersConst);
         var catalogInfo = getFromStorage(catalogConst);
         var catalog = catalogInfo.catalog;
