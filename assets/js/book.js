@@ -131,19 +131,30 @@ for(review of reviewsJSON.reviews) {
             li.setAttribute("class", "row message mx-auto");
             var div = document.createElement("div");
             div.setAttribute("class", "row");
+            var textDiv = document.createElement("div");
+            textDiv.setAttribute("class","col-sm-10");
+            div.setAttribute("style", "width: 100%");
+            var imgDiv = document.createElement("div");
+            imgDiv.setAttribute("class", "col-sm-2");
+            //
             var img = document.createElement("img");
             img.setAttribute("class", "review-img");
-            img.setAttribute("src", "../img/users/" + r.user + ".jpg");    
+            img.setAttribute("src", "../img/users/" + r.user + ".jpg");
+            //
             var username = document.createElement("div");
             username.setAttribute("class", "review-name");
             username.innerHTML = r.firstname + " " + r.surname;  
+            textDiv.appendChild(username);
+            //
             var text = document.createElement("div");
             text.setAttribute("class", "review-text"); 
             text.innerHTML = r.review;
-            div.appendChild(img);
-            div.appendChild(username);
+            textDiv.appendChild(text);
+            //
+            imgDiv.appendChild(img);
+            div.appendChild(imgDiv);
+            div.appendChild(textDiv);
             li.appendChild(div);
-            li.appendChild(text);
             reviewList.appendChild(li);
         } 
     }
